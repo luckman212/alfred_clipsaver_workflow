@@ -351,6 +351,36 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>alignment</key>
+				<integer>0</integer>
+				<key>backgroundcolor</key>
+				<string></string>
+				<key>fadespeed</key>
+				<integer>0</integer>
+				<key>fillmode</key>
+				<integer>0</integer>
+				<key>font</key>
+				<string></string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>largetypetext</key>
+				<string>failed with error:
+{var:errmsg}</string>
+				<key>textcolor</key>
+				<string></string>
+				<key>wrapat</key>
+				<integer>50</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.largetype</string>
+			<key>uid</key>
+			<string>E96B42D9-7B30-4324-A38A-66A2B3668DCE</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>conditions</key>
 				<array>
 					<dict>
@@ -391,36 +421,6 @@
 			<string>F8D8F9B0-A655-474F-9D3C-68866A8D85E6</string>
 			<key>version</key>
 			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>alignment</key>
-				<integer>0</integer>
-				<key>backgroundcolor</key>
-				<string></string>
-				<key>fadespeed</key>
-				<integer>0</integer>
-				<key>fillmode</key>
-				<integer>0</integer>
-				<key>font</key>
-				<string></string>
-				<key>ignoredynamicplaceholders</key>
-				<false/>
-				<key>largetypetext</key>
-				<string>failed with error:
-{var:errmsg}</string>
-				<key>textcolor</key>
-				<string></string>
-				<key>wrapat</key>
-				<integer>50</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.largetype</string>
-			<key>uid</key>
-			<string>E96B42D9-7B30-4324-A38A-66A2B3668DCE</string>
-			<key>version</key>
-			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -512,7 +512,7 @@
 		</dict>
 	</array>
 	<key>readme</key>
-	<string># ClipSaver (v2.0.3)
+	<string># ClipSaver
 
 This workflow is triggered with the `cs` keyword by default.
 
@@ -538,10 +538,10 @@ Upon success, the original clipboard entry as well as the .tiff from Alfred's da
 - Pass an image format e.g. `jpeg` as an argument to override your default format
 
 ## Screenshot:
-&lt;img width=500 src=https://user-images.githubusercontent.com/1992842/148102272-1e6e8cf5-08c1-4f3e-add5-63b56225ba3c.png&gt;
+&lt;img width=500 src=https://raw.githubusercontent.com/luckman212/alfred_clipsaver_workflow/main/clipsaver.png&gt;
 
 ## Download:
-https://github.com/luckman212/alfredworkflows/blob/master/ClipSaver.alfredworkflow?raw=true
+https://github.com/luckman212/alfred_clipsaver_workflow/releases/latest/
 
 ## Forum topic:
 https://www.alfredforum.com/topic/14400-clipsaver-save-images-from-clipboard-history-to-png-files/</string>
@@ -644,9 +644,11 @@ https://www.alfredforum.com/topic/14400-clipsaver-save-images-from-clipboard-his
 		<key>sf_clip_limit</key>
 		<string></string>
 	</dict>
+	<key>variablesdontexport</key>
+	<array/>
 	<key>version</key>
-	<string>2.0.3</string>
+	<string>2.0.4</string>
 	<key>webaddress</key>
-	<string>https://github.com/luckman212/alfredworkflows</string>
+	<string>https://github.com/luckman212/alfred_clipsaver_workflow</string>
 </dict>
 </plist>

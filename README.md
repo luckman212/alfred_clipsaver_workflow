@@ -1,4 +1,4 @@
-# ClipSaver (v2.0.3)
+# ClipSaver
 
 This workflow is triggered with the `cs` keyword by default.
 
@@ -27,7 +27,7 @@ Upon success, the original clipboard entry as well as the .tiff from Alfred's da
 <img width=500 src=https://raw.githubusercontent.com/luckman212/alfred_clipsaver_workflow/main/clipsaver.png>
 
 ## Download:
-https://github.com/luckman212/alfredworkflows/blob/master/ClipSaver.alfredworkflow?raw=true
+https://github.com/luckman212/alfred_clipsaver_workflow/releases/latest/
 
 ## Forum topic:
 https://www.alfredforum.com/topic/14400-clipsaver-save-images-from-clipboard-history-to-png-files/
