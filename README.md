@@ -24,7 +24,7 @@ Upon success, the original clipboard entry as well as the .tiff from Alfred's da
 - Pass an image format e.g. `jpeg` as an argument to override your default format
 
 ## Screenshot:
-<img width=500 src=https://user-images.githubusercontent.com/1992842/148102272-1e6e8cf5-08c1-4f3e-add5-63b56225ba3c.png>
+<img width=500 src=https://raw.githubusercontent.com/luckman212/alfred_clipsaver_workflow/main/clipsaver.png>
 
 ## Download:
 https://github.com/luckman212/alfredworkflows/blob/master/ClipSaver.alfredworkflow?raw=true
