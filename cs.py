@@ -33,7 +33,7 @@ def listitems(fmt='png',num=1):
       "quicklookurl": ''
     })
   with database(db_res) as db:
-    rows = db.execute("SELECT dataHash,item,apppath,strftime('%Y-%m-%d %H:%M',ts+978307200,'unixepoch','localtime') from clipboard WHERE dataType = 1 ORDER BY ts DESC LIMIT ?", [sf_clip_limit])
+    rows = db.execute("SELECT dataHash,item,apppath,strftime('%Y-%m-%d %H:%M',ts+978307200,'unixepoch','localtime') from clipboard WHERE dataType = 1 ORDER BY rowid DESC LIMIT ?", [sf_clip_limit])
     for r in rows:
       if r[2] is None:
         icon = { "path": "generic.png" }
@@ -49,7 +49,8 @@ def listitems(fmt='png',num=1):
         "variables": { "uidSeed": uidSeed },
         "title": r[1],
         "subtitle": r[3] + f' ↩ save as {fmt.upper()}',
-        "arg": r[0],
+        "arg": img,
+        "type": "file:skipcheck",
         "variables": {
           "format": fmt.lower(),
         },
@@ -57,18 +58,18 @@ def listitems(fmt='png',num=1):
         "icon": icon,
         "mods": {
           "alt": {
-            "arg": r[0],
+            "arg": img,
             "subtitle": ' '.join([ 'from:', sub ])
           },
           "cmd": {
-            "arg": db_res + '.data/' + str(r[0]),
+            "arg": img,
             "subtitle": ' '.join([ str(r[0]), '(reveal)' ]),
             "variables": {
               "action": 'reveal'
             }
           }
         },
-        "quicklookurl": db_res + '.data/' + str(r[0])
+        "quicklookurl": img
       })
 
 try:
@@ -106,9 +107,9 @@ if not items:
     "title": "No image clips found",
     "subtitle": "clipboard history may be empty",
     "icon": { "path": "error.png" },
-    "valid": "false"
+    "valid": False
   }]
 
 variables = { 'uidSeed': uidSeed }
-output = { "variables": variables, "items": items }
+output = { "variables": variables, "skipknowledge": True, "items": items }
 json.dump(output, sys.stdout)

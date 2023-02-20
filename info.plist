@@ -225,6 +225,8 @@
 				</array>
 				<key>elselabel</key>
 				<string></string>
+				<key>hideelse</key>
+				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.conditional</string>
@@ -414,11 +416,34 @@
 				</array>
 				<key>elselabel</key>
 				<string>single</string>
+				<key>hideelse</key>
+				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.conditional</string>
 			<key>uid</key>
 			<string>F8D8F9B0-A655-474F-9D3C-68866A8D85E6</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>The clipboard history item failed to be converted.</string>
+				<key>title</key>
+				<string>Failed!</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>E3B4F7E0-C8D4-4C51-A42A-25FF8B353E84</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -444,27 +469,6 @@
 			<string>33CD6F02-65A3-4497-9C85-E38FDE97FC8D</string>
 			<key>version</key>
 			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>The clipboard history item failed to be converted.</string>
-				<key>title</key>
-				<string>Failed!</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>E3B4F7E0-C8D4-4C51-A42A-25FF8B353E84</string>
-			<key>version</key>
-			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -502,6 +506,8 @@
 				</array>
 				<key>elselabel</key>
 				<string></string>
+				<key>hideelse</key>
+				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.conditional</string>
@@ -550,85 +556,87 @@ https://www.alfredforum.com/topic/14400-clipsaver-save-images-from-clipboard-his
 		<key>33CD6F02-65A3-4497-9C85-E38FDE97FC8D</key>
 		<dict>
 			<key>xpos</key>
-			<integer>365</integer>
+			<real>365</real>
 			<key>ypos</key>
-			<integer>310</integer>
+			<real>310</real>
 		</dict>
 		<key>3C93115F-315B-407A-A491-DC010E92BEE9</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>3</integer>
 			<key>xpos</key>
-			<integer>645</integer>
+			<real>645</real>
 			<key>ypos</key>
-			<integer>80</integer>
+			<real>80</real>
 		</dict>
 		<key>519C25B7-FDE4-4EA5-AF9B-7460EEDC70CE</key>
 		<dict>
 			<key>xpos</key>
-			<integer>520</integer>
+			<real>520</real>
 			<key>ypos</key>
-			<integer>315</integer>
+			<real>315</real>
 		</dict>
 		<key>5E9A0126-8C80-41E7-AD49-590FE0777A91</key>
 		<dict>
 			<key>xpos</key>
-			<integer>365</integer>
+			<real>365</real>
 			<key>ypos</key>
-			<integer>60</integer>
+			<real>60</real>
 		</dict>
 		<key>71A0EF86-42D5-4C0A-8656-CB6FEAD6F857</key>
 		<dict>
 			<key>xpos</key>
-			<integer>80</integer>
+			<real>45</real>
 			<key>ypos</key>
-			<integer>185</integer>
+			<real>185</real>
 		</dict>
 		<key>A8AB7CFC-4F7B-436E-8EAD-C48244230F84</key>
 		<dict>
 			<key>xpos</key>
-			<integer>520</integer>
+			<real>520</real>
 			<key>ypos</key>
-			<integer>50</integer>
+			<real>50</real>
 		</dict>
 		<key>AB178842-6707-4C5B-88D1-FC317394D8F9</key>
 		<dict>
 			<key>xpos</key>
-			<integer>365</integer>
+			<real>365</real>
 			<key>ypos</key>
-			<integer>185</integer>
+			<real>185</real>
 		</dict>
 		<key>E3B4F7E0-C8D4-4C51-A42A-25FF8B353E84</key>
 		<dict>
 			<key>xpos</key>
-			<integer>645</integer>
+			<real>645</real>
 			<key>ypos</key>
-			<integer>310</integer>
+			<real>310</real>
 		</dict>
 		<key>E96B42D9-7B30-4324-A38A-66A2B3668DCE</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>1</integer>
 			<key>xpos</key>
-			<integer>645</integer>
+			<real>645</real>
 			<key>ypos</key>
-			<integer>190</integer>
+			<real>190</real>
 		</dict>
 		<key>F34B0F25-D875-426D-8071-3FACA31F0AE1</key>
 		<dict>
 			<key>xpos</key>
-			<integer>835</integer>
+			<real>835</real>
 			<key>ypos</key>
-			<integer>20</integer>
+			<real>20</real>
 		</dict>
 		<key>F8D8F9B0-A655-474F-9D3C-68866A8D85E6</key>
 		<dict>
 			<key>xpos</key>
-			<integer>250</integer>
+			<real>250</real>
 			<key>ypos</key>
-			<integer>190</integer>
+			<real>190</real>
 		</dict>
 	</dict>
+	<key>userconfigurationconfig</key>
+	<array/>
 	<key>variables</key>
 	<dict>
 		<key>db_name</key>
@@ -644,10 +652,8 @@ https://www.alfredforum.com/topic/14400-clipsaver-save-images-from-clipboard-his
 		<key>sf_clip_limit</key>
 		<string></string>
 	</dict>
-	<key>variablesdontexport</key>
-	<array/>
 	<key>version</key>
-	<string>2.0.4</string>
+	<string>2.0.5</string>
 	<key>webaddress</key>
 	<string>https://github.com/luckman212/alfred_clipsaver_workflow</string>
 </dict>
