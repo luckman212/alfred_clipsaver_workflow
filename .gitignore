@@ -1,6 +1,17 @@
+
+# Editor specific files #
+# Logs and temp files #
 # OS generated files #
 ######################
-._*
+#######################
+#########################
+*.cache
+*.log
+*.out
+*.result
+*.stderr
+*.stdout
+*.tmp
 .com.apple.timemachine.donotpresent
 .DocumentRevisions-V100
 .DS_Store
@@ -10,17 +21,6 @@
 .TemporaryItems
 .Trashes
 .VolumeIcon.icns
-
-# Editor specific files #
-#########################
 .vscode
-
-# Logs and temp files #
-#######################
-*.cache
-*.log
-*.out
-*.result
-*.stderr
-*.stdout
-*.tmp
+._*
+ClipSaver.alfredworkflow
