@@ -19,19 +19,6 @@
 				<false/>
 			</dict>
 		</array>
-		<key>3C93115F-315B-407A-A491-DC010E92BEE9</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>F34B0F25-D875-426D-8071-3FACA31F0AE1</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>519C25B7-FDE4-4EA5-AF9B-7460EEDC70CE</key>
 		<array>
 			<dict>
@@ -52,6 +39,29 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>A8AB7CFC-4F7B-436E-8EAD-C48244230F84</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>6C55B9DC-6A05-4228-AD55-2311DD125885</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F34B0F25-D875-426D-8071-3FACA31F0AE1</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>4F366E5F-E737-440C-B9A3-FC859781F3DE</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -89,7 +99,7 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>3C93115F-315B-407A-A491-DC010E92BEE9</string>
+				<string>6C55B9DC-6A05-4228-AD55-2311DD125885</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -101,13 +111,26 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>E96B42D9-7B30-4324-A38A-66A2B3668DCE</string>
+				<string>E3B4F7E0-C8D4-4C51-A42A-25FF8B353E84</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
 				<key>sourceoutputuid</key>
 				<string>2A316F1C-9FE9-43A3-A61D-F5CEFDF2420D</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>E3B4F7E0-C8D4-4C51-A42A-25FF8B353E84</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>4F366E5F-E737-440C-B9A3-FC859781F3DE</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -226,7 +249,7 @@
 				<key>elselabel</key>
 				<string></string>
 				<key>hideelse</key>
-				<false/>
+				<true/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.conditional</string>
@@ -261,32 +284,40 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>alignment</key>
-				<integer>0</integer>
-				<key>backgroundcolor</key>
-				<string></string>
-				<key>fadespeed</key>
-				<integer>0</integer>
-				<key>fillmode</key>
-				<integer>0</integer>
-				<key>font</key>
-				<string></string>
-				<key>ignoredynamicplaceholders</key>
+				<key>lastpathcomponent</key>
 				<false/>
-				<key>largetypetext</key>
-				<string>completed with warnings:
-{var:errmsg}</string>
-				<key>textcolor</key>
-				<string></string>
-				<key>wrapat</key>
-				<integer>50</integer>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{var:errmsg}</string>
+				<key>title</key>
+				<string>Warning</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.output.largetype</string>
+			<string>alfred.workflow.output.notification</string>
 			<key>uid</key>
-			<string>3C93115F-315B-407A-A491-DC010E92BEE9</string>
+			<string>6C55B9DC-6A05-4228-AD55-2311DD125885</string>
 			<key>version</key>
-			<integer>3</integer>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>'{query}', {variables}</string>
+				<key>cleardebuggertext</key>
+				<false/>
+				<key>processoutputs</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.debug</string>
+			<key>uid</key>
+			<string>4F366E5F-E737-440C-B9A3-FC859781F3DE</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -353,36 +384,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>alignment</key>
-				<integer>0</integer>
-				<key>backgroundcolor</key>
-				<string></string>
-				<key>fadespeed</key>
-				<integer>0</integer>
-				<key>fillmode</key>
-				<integer>0</integer>
-				<key>font</key>
-				<string></string>
-				<key>ignoredynamicplaceholders</key>
-				<false/>
-				<key>largetypetext</key>
-				<string>failed with error:
-{var:errmsg}</string>
-				<key>textcolor</key>
-				<string></string>
-				<key>wrapat</key>
-				<integer>50</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.largetype</string>
-			<key>uid</key>
-			<string>E96B42D9-7B30-4324-A38A-66A2B3668DCE</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>conditions</key>
 				<array>
 					<dict>
@@ -436,9 +437,9 @@
 				<key>removeextension</key>
 				<false/>
 				<key>text</key>
-				<string>The clipboard history item failed to be converted.</string>
+				<string>Clipboard history image conversion failed {var:errmsg}</string>
 				<key>title</key>
-				<string>Failed!</string>
+				<string>Error</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.output.notification</string>
@@ -481,20 +482,6 @@
 						<key>matchcasesensitive</key>
 						<false/>
 						<key>matchmode</key>
-						<integer>0</integer>
-						<key>matchstring</key>
-						<string>0</string>
-						<key>outputlabel</key>
-						<string>success</string>
-						<key>uid</key>
-						<string>AAF941DB-A595-4072-BD25-6BCC55A93AE2</string>
-					</dict>
-					<dict>
-						<key>inputstring</key>
-						<string>{var:exitcode}</string>
-						<key>matchcasesensitive</key>
-						<false/>
-						<key>matchmode</key>
 						<integer>2</integer>
 						<key>matchstring</key>
 						<string>0</string>
@@ -503,11 +490,25 @@
 						<key>uid</key>
 						<string>264D1DEE-5F29-4719-BF23-EE32ACFA308E</string>
 					</dict>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:exitcode}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>0</string>
+						<key>outputlabel</key>
+						<string>success</string>
+						<key>uid</key>
+						<string>AAF941DB-A595-4072-BD25-6BCC55A93AE2</string>
+					</dict>
 				</array>
 				<key>elselabel</key>
 				<string></string>
 				<key>hideelse</key>
-				<false/>
+				<true/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.conditional</string>
@@ -524,7 +525,7 @@ This workflow is triggered with the `cs` keyword by default.
 
 It presents images from Alfred's clipboard history via a Script Filter, and allows selecting an image to be extracted, converted to a format of your choice (default is PNG) and placed in a folder of your choosing (default is on the Desktop, in a folder called `saved_clips`). You can optionally set the `save_to_current` environment variable to have the workflow save to the currently active Finder window.
 
-Upon success, the original clipboard entry as well as the .tiff from Alfred's database will be removed.
+Upon success, the original clipboard entry as well as the .tiff from Alfred's database will be removed if you have `delete_after_convert` set to true (File List objects in the clipboard history will remain untouched).
 
 ## Workflow Variables
 
@@ -534,6 +535,7 @@ Upon success, the original clipboard entry as well as the .tiff from Alfred's da
 - `sf_clip_limit` (default: empty) an optional limit to constrain the number of results displayed in the Script Filter
 - `save_to_current` (default: false) - set to `true` if you want the workflow to put saved images in the directory of the "frontmost" Finder window
 - `default_format` - set to e.g. `jpeg`, `png` etc (use `sips --formats` to see all available formats). You can override per invocation by passing as an argument.
+- `delete_after_convert` (default: false) - set to `true` if you want the source images deleted after successful conversion
 
 ## Usage Tips
 
@@ -555,12 +557,37 @@ https://www.alfredforum.com/topic/14400-clipsaver-save-images-from-clipboard-his
 	<dict>
 		<key>33CD6F02-65A3-4497-9C85-E38FDE97FC8D</key>
 		<dict>
+			<key>note</key>
+			<string>save_single</string>
 			<key>xpos</key>
 			<real>365</real>
 			<key>ypos</key>
 			<real>310</real>
 		</dict>
-		<key>3C93115F-315B-407A-A491-DC010E92BEE9</key>
+		<key>4F366E5F-E737-440C-B9A3-FC859781F3DE</key>
+		<dict>
+			<key>xpos</key>
+			<real>835</real>
+			<key>ypos</key>
+			<real>170</real>
+		</dict>
+		<key>519C25B7-FDE4-4EA5-AF9B-7460EEDC70CE</key>
+		<dict>
+			<key>xpos</key>
+			<real>520</real>
+			<key>ypos</key>
+			<real>330</real>
+		</dict>
+		<key>5E9A0126-8C80-41E7-AD49-590FE0777A91</key>
+		<dict>
+			<key>note</key>
+			<string>save_multi</string>
+			<key>xpos</key>
+			<real>365</real>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>6C55B9DC-6A05-4228-AD55-2311DD125885</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>3</integer>
@@ -568,20 +595,6 @@ https://www.alfredforum.com/topic/14400-clipsaver-save-images-from-clipboard-his
 			<real>645</real>
 			<key>ypos</key>
 			<real>80</real>
-		</dict>
-		<key>519C25B7-FDE4-4EA5-AF9B-7460EEDC70CE</key>
-		<dict>
-			<key>xpos</key>
-			<real>520</real>
-			<key>ypos</key>
-			<real>315</real>
-		</dict>
-		<key>5E9A0126-8C80-41E7-AD49-590FE0777A91</key>
-		<dict>
-			<key>xpos</key>
-			<real>365</real>
-			<key>ypos</key>
-			<real>60</real>
 		</dict>
 		<key>71A0EF86-42D5-4C0A-8656-CB6FEAD6F857</key>
 		<dict>
@@ -606,19 +619,12 @@ https://www.alfredforum.com/topic/14400-clipsaver-save-images-from-clipboard-his
 		</dict>
 		<key>E3B4F7E0-C8D4-4C51-A42A-25FF8B353E84</key>
 		<dict>
-			<key>xpos</key>
-			<real>645</real>
-			<key>ypos</key>
-			<real>310</real>
-		</dict>
-		<key>E96B42D9-7B30-4324-A38A-66A2B3668DCE</key>
-		<dict>
 			<key>colorindex</key>
 			<integer>1</integer>
 			<key>xpos</key>
 			<real>645</real>
 			<key>ypos</key>
-			<real>190</real>
+			<real>195</real>
 		</dict>
 		<key>F34B0F25-D875-426D-8071-3FACA31F0AE1</key>
 		<dict>
@@ -645,6 +651,8 @@ https://www.alfredforum.com/topic/14400-clipsaver-save-images-from-clipboard-his
 		<string>Library/Application Support/Alfred/Databases</string>
 		<key>default_format</key>
 		<string>png</string>
+		<key>delete_after_convert</key>
+		<string>true</string>
 		<key>dest_dir</key>
 		<string>Desktop/saved_clips</string>
 		<key>save_to_current</key>
@@ -652,8 +660,10 @@ https://www.alfredforum.com/topic/14400-clipsaver-save-images-from-clipboard-his
 		<key>sf_clip_limit</key>
 		<string></string>
 	</dict>
+	<key>variablesdontexport</key>
+	<array/>
 	<key>version</key>
-	<string>2.0.5</string>
+	<string>2.1.3</string>
 	<key>webaddress</key>
 	<string>https://github.com/luckman212/alfred_clipsaver_workflow</string>
 </dict>

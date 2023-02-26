@@ -4,7 +4,7 @@ This workflow is triggered with the `cs` keyword by default.
 
 It presents images from Alfred's clipboard history via a Script Filter, and allows selecting an image to be extracted, converted to a format of your choice (default is PNG) and placed in a folder of your choosing (default is on the Desktop, in a folder called `saved_clips`). You can optionally set the `save_to_current` environment variable to have the workflow save to the currently active Finder window.
 
-Upon success, the original clipboard entry as well as the .tiff from Alfred's database will be removed.
+Upon success, the original clipboard entry as well as the .tiff from Alfred's database will be removed if you have `delete_after_convert` set to true (File List objects in the clipboard history will remain untouched).
 
 ## Workflow Variables
 
@@ -14,6 +14,7 @@ Upon success, the original clipboard entry as well as the .tiff from Alfred's da
 - `sf_clip_limit` (default: empty) an optional limit to constrain the number of results displayed in the Script Filter
 - `save_to_current` (default: false) - set to `true` if you want the workflow to put saved images in the directory of the "frontmost" Finder window
 - `default_format` - set to e.g. `jpeg`, `png` etc (use `sips --formats` to see all available formats). You can override per invocation by passing as an argument.
+- `delete_after_convert` (default: false) - set to `true` if you want the source images deleted after successful conversion
 
 ## Usage Tips
 

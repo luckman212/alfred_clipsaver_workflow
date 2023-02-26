@@ -5,15 +5,18 @@ import sys
 import time
 import json
 import sqlite3
+import plistlib
 from contextlib import contextmanager
+#from pathlib import Path
 
 home_path = os.getenv('HOME')
-db_path = os.getenv('db_path') or 'Library/Application Support/Alfred/Databases'
-db_name = os.getenv('db_name') or 'clipboard.alfdb'
+db_path = os.getenv('db_path', 'Library/Application Support/Alfred/Databases')
+db_name = os.getenv('db_name', 'clipboard.alfdb')
 db_res = os.path.join(home_path, db_path, db_name)
 i_path = db_res + '.data'
 sf_clip_limit = os.getenv('sf_clip_limit') or -1
 uidSeed = str(os.getenv('uidSeed', time.time()))
+img_exts = [ 'png', 'gif', 'jpg', 'jpeg', 'tiff', 'tif', 'bmp' ]
 
 @contextmanager
 def database(path):
@@ -28,31 +31,47 @@ def listitems(fmt='png',num=1):
       "arg": num,
       "variables": {
         "action": 'multisave',
-        "format": fmt.lower(),
+        "format": fmt.lower()
       },
       "quicklookurl": ''
     })
   with database(db_res) as db:
-    rows = db.execute("SELECT dataHash,item,apppath,strftime('%Y-%m-%d %H:%M',ts+978307200,'unixepoch','localtime') from clipboard WHERE dataType = 1 ORDER BY rowid DESC LIMIT ?", [sf_clip_limit])
+    #0=filename, 1=title, 2=src app, 3=time, 4=type (1=image from db,2=files)
+    rows = db.execute("SELECT dataHash,item,apppath,strftime('%Y-%m-%d %H:%M',ts+978307200,'unixepoch','localtime'),dataType from clipboard WHERE dataType IN (1,2) ORDER BY rowid DESC LIMIT ?", [sf_clip_limit])
     for r in rows:
-      if r[2] is None:
+      srcpath = os.path.join(i_path, r[0])
+      if r[4] == 2:
+        try:
+          with open(srcpath, "rb") as fp:
+            plistobj = plistlib.load(fp)
+          img = plistobj[0]
+          ext = img.split(os.extsep)[-1].lower()
+          assert (os.path.exists(img) and ext in img_exts)
+        except:
+          continue
+        title = ' '.join([ "File:", img ])
+        icon = { "path": img }
+        sub = "File List"
+      elif r[2] is None:
+        title = r[1]
         icon = { "path": "generic.png" }
         sub = "(unknown)"
         #match = 'unknown'
       else:
-        img = os.path.join(i_path, r[0])
+        img = srcpath
+        title = r[1]
         icon = { "path": img }
         sub = r[2]
         #match = sub.replace('/', ' / ')
       items.append({
         "uid": ''.join([ uidSeed, '.', r[0] ]),
         "variables": { "uidSeed": uidSeed },
-        "title": r[1],
+        "title": title,
         "subtitle": r[3] + f' ↩ save as {fmt.upper()}',
         "arg": img,
         "type": "file:skipcheck",
         "variables": {
-          "format": fmt.lower(),
+          "format": fmt.lower()
         },
         #"match": match,
         "icon": icon,
@@ -63,7 +82,7 @@ def listitems(fmt='png',num=1):
           },
           "cmd": {
             "arg": img,
-            "subtitle": ' '.join([ str(r[0]), '(reveal)' ]),
+            "subtitle": ' '.join([ str(img), '(reveal)' ]),
             "variables": {
               "action": 'reveal'
             }
