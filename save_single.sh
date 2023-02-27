@@ -20,10 +20,10 @@ img_basename=${img_pathname##*/}
 img_noext=${img_basename%.*}
 
 if [[ ${dest_dir:0:1} != '/' ]]; then
-  dest_dir=$HOME/$dest_dir
+  dest_dir=$(tr '[:upper:]' '[:lower:]' <<<"$HOME/$dest_dir")
 fi
 
-if [[ ${save_to_current,,} == true ]]; then
+if [[ ${save_to_current} == true ]]; then
   if fwin=$(osascript -e 'tell application "Finder" to get POSIX path of (insertion location as alias)' 2>/dev/null); then
     dest_dir=$fwin
   fi
@@ -36,11 +36,11 @@ if [[ -r $img_pathname ]]; then
   fi
   fmt=${format:-png}
   destfile=$dest_dir/${img_noext}.$fmt
-  if [[ ${img_pathname,,} == "${destfile,,}" ]]; then
+  if [[ ${img_pathname} == "${destfile,,}" ]]; then
     break_err 1 "(source and destination filename were the same)"
   fi
   if /usr/bin/sips -s format $fmt "$img_pathname" --out "$dest_dir/${img_noext}.$fmt"; then
-    if [[ ${delete_after_convert,,} == true ]]; then
+    if [[ ${delete_after_convert} == true ]]; then
       /usr/bin/sqlite3 "$HOME/$db_path/$db_name" "DELETE FROM clipboard WHERE dataHash = \"$img_basename\" AND dataType = 1 LIMIT 1;"
       rm "$img_pathname"
     fi

@@ -527,14 +527,16 @@ It presents images from Alfred's clipboard history via a Script Filter, and allo
 
 Upon success, the original clipboard entry as well as the .tiff from Alfred's database will be removed if you have `delete_after_convert` set to true (File List objects in the clipboard history will remain untouched).
 
-## Workflow Variables
+## Workflow Configuration
 
-- `db_name` defaults to `clipboard.alfdb` (required)
-- `db_path` defaults to `Library/Application Support/Alfred/Databases` (required)
-- `dest_dir` where to save images if `save_to_current == false`, defaults to `Desktop/saved_clips` (required)
+All configuration is optional. The workflow should work "out of the box" without configuring any of these items. They are here for advanced users only.
+
+- `db_name` - override to specify a custom clipboard database file if needed
+- `db_path` - override the default clipboard database path
+- `dest_dir` where to save images if `save_to_current == false`, defaults to `~/Desktop/saved_clips`
 - `sf_clip_limit` (default: empty) an optional limit to constrain the number of results displayed in the Script Filter
 - `save_to_current` (default: false) - set to `true` if you want the workflow to put saved images in the directory of the "frontmost" Finder window
-- `default_format` - set to e.g. `jpeg`, `png` etc (use `sips --formats` to see all available formats). You can override per invocation by passing as an argument.
+- `default_format` (default: png) - set to e.g. `jpg` etc. You can override per invocation by passing as an argument (use `sips --formats` to see all available formats)
 - `delete_after_convert` (default: false) - set to `true` if you want the source images deleted after successful conversion
 
 ## Usage Tips
@@ -642,26 +644,162 @@ https://www.alfredforum.com/topic/14400-clipsaver-save-images-from-clipboard-his
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>
-	<array/>
-	<key>variables</key>
-	<dict>
-		<key>db_name</key>
-		<string>clipboard.alfdb</string>
-		<key>db_path</key>
-		<string>Library/Application Support/Alfred/Databases</string>
-		<key>default_format</key>
-		<string>png</string>
-		<key>delete_after_convert</key>
-		<string>true</string>
-		<key>dest_dir</key>
-		<string>Desktop/saved_clips</string>
-		<key>save_to_current</key>
-		<string>false</string>
-		<key>sf_clip_limit</key>
-		<string></string>
-	</dict>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string></string>
+				<key>filtermode</key>
+				<integer>1</integer>
+				<key>placeholder</key>
+				<string>~/Desktop/saved_clips</string>
+				<key>required</key>
+				<false/>
+			</dict>
+			<key>description</key>
+			<string>Folder in which to save converted images</string>
+			<key>label</key>
+			<string>Destination</string>
+			<key>type</key>
+			<string>filepicker</string>
+			<key>variable</key>
+			<string>dest_dir</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>png</string>
+				<key>pairs</key>
+				<array>
+					<array>
+						<string>PNG</string>
+						<string>png</string>
+					</array>
+					<array>
+						<string>JPG</string>
+						<string>jpg</string>
+					</array>
+					<array>
+						<string>GIF</string>
+						<string>gif</string>
+					</array>
+				</array>
+			</dict>
+			<key>description</key>
+			<string>Default image format to convert to</string>
+			<key>label</key>
+			<string>Default format</string>
+			<key>type</key>
+			<string>popupbutton</string>
+			<key>variable</key>
+			<string>default_format</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<false/>
+				<key>required</key>
+				<false/>
+				<key>text</key>
+				<string>Delete source images after conversion</string>
+			</dict>
+			<key>description</key>
+			<string></string>
+			<key>label</key>
+			<string></string>
+			<key>type</key>
+			<string>checkbox</string>
+			<key>variable</key>
+			<string>delete_after_convert</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<false/>
+				<key>required</key>
+				<false/>
+				<key>text</key>
+				<string>Save images to current Finder window</string>
+			</dict>
+			<key>description</key>
+			<string></string>
+			<key>label</key>
+			<string></string>
+			<key>type</key>
+			<string>checkbox</string>
+			<key>variable</key>
+			<string>save_to_current</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string></string>
+				<key>placeholder</key>
+				<string>unlimited</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Enter an integer to limit # of results returned from the database</string>
+			<key>label</key>
+			<string>Limit</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>sf_clip_limit</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string></string>
+				<key>placeholder</key>
+				<string>~/Library/Application Support/Alfred/Databases</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Path to clipboard database</string>
+			<key>label</key>
+			<string>Database path</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>db_path</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string></string>
+				<key>placeholder</key>
+				<string>clipboard.alfdb</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Filename of clipboard history database</string>
+			<key>label</key>
+			<string>Database filename</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>db_name</string>
+		</dict>
+	</array>
 	<key>version</key>
-	<string>2.1.4</string>
+	<string>2.2.0</string>
 	<key>webaddress</key>
 	<string>https://github.com/luckman212/alfred_clipsaver_workflow</string>
 </dict>

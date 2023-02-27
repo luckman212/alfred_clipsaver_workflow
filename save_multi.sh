@@ -46,7 +46,7 @@ if [[ $save_to_current == "true" ]]; then
 fi
 
 if [[ ${dest_dir:0:1} != '/' ]]; then
-  dest_dir=$HOME/$dest_dir
+  dest_dir=$(tr '[:upper:]' '[:lower:]' <<<"$HOME/$dest_dir")
 fi
 
 # make sure dest_dir exists
@@ -66,7 +66,7 @@ for src_fname in $clip_list; do
 
   if [[ -r $tiff_name ]]; then
     if /usr/bin/sips -s format $fmt "$tiff_name" --out "$dest_dir/${src_basename}.$fmt" &>/dev/null; then
-      if [[ ${delete_after_convert,,} == true ]]; then
+      if [[ ${delete_after_convert} == true ]]; then
         /usr/bin/sqlite3 "$HOME/$db_path/$db_name" "DELETE FROM clipboard WHERE dataHash = \"$src_fname\" AND dataType = 1 LIMIT 1;"
         rm "$tiff_name" &>/dev/null
       fi

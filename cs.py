@@ -9,12 +9,34 @@ import plistlib
 from contextlib import contextmanager
 #from pathlib import Path
 
-home_path = os.getenv('HOME')
-db_path = os.getenv('db_path', 'Library/Application Support/Alfred/Databases')
-db_name = os.getenv('db_name', 'clipboard.alfdb')
-db_res = os.path.join(home_path, db_path, db_name)
+def envvar(v: str, dv: str) -> str:
+  return str(os.getenv(v) or dv)
+
+def envvar_to_bool(v: str) -> str:
+  return str(bool(os.getenv(v))).lower()
+
+def envvar_to_int(v: str, dv: int=0) -> int:
+  try:
+    return int(os.getenv(v))
+  except:
+    pass
+  try:
+    return int(dv)
+  except:
+    return 0
+
+#wf vars
+db_name = envvar('db_name', 'clipboard.alfdb')
+db_path = os.path.expanduser(envvar('db_path', '~/Library/Application Support/Alfred/Databases'))
+default_format = envvar('default_format', 'png').lower()
+delete_after_convert = envvar_to_bool('delete_after_convert')
+dest_dir = os.path.expanduser(envvar('dest_dir', '~/Desktop/saved_clips')).lower()
+save_to_current = envvar_to_bool('save_to_current')
+sf_clip_limit = envvar_to_int('sf_clip_limit', -1)
+
+#home_path = os.getenv('HOME')
+db_res = os.path.join(db_path, db_name)
 i_path = db_res + '.data'
-sf_clip_limit = os.getenv('sf_clip_limit') or -1
 uidSeed = str(os.getenv('uidSeed', time.time()))
 img_exts = [ 'png', 'gif', 'jpg', 'jpeg', 'tiff', 'tif', 'bmp' ]
 
@@ -67,7 +89,7 @@ def listitems(fmt='png',num=1):
         "variables": { "uidSeed": uidSeed },
         "title": title,
         "subtitle": r[3] + f' ↩ save as {fmt.upper()}',
-        "arg": img,
+        "arg": img.lower(),
         "type": "file:skipcheck",
         "variables": {
           "format": fmt.lower()
@@ -76,7 +98,7 @@ def listitems(fmt='png',num=1):
         "icon": icon,
         "mods": {
           "alt": {
-            "arg": img,
+            "arg": img.lower(),
             "subtitle": ' '.join([ 'from:', sub ])
           },
           "cmd": {
@@ -112,7 +134,7 @@ while len(args):
 if num < 1:
   num = 1
 if fmt is None or len(str(fmt)) < 3:
-  fmt = os.getenv('default_format') or 'png'
+  fmt = default_format
 if fmt and fmt.upper() == 'JPG':
   fmt = 'jpeg'
 
@@ -128,6 +150,10 @@ if not items:
     "valid": False
   }]
 
-variables = { 'uidSeed': uidSeed }
+variables = {
+  'uidSeed': uidSeed,
+  'delete_after_convert': delete_after_convert,
+  'save_to_current': save_to_current
+}
 output = { "variables": variables, "skipknowledge": True, "items": items }
 json.dump(output, sys.stdout)
