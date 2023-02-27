@@ -20,7 +20,7 @@ function open_orphan_dir() {
 
 case $1 in
   -o|--open) #open dirs
-    open -a Finder "$HOME/$db_path/$db_name.data"
+    open -a Finder "$db_path/$db_name.data"
     open_orphan_dir
     exit
     ;;
@@ -28,10 +28,10 @@ esac
 
 # populate array with list of image clips from database
 clipArray=()
-while IFS= read -r line; do clipArray+=("$line"); done < <(/usr/bin/sqlite3 "$HOME/$db_path/$db_name" "SELECT dataHash FROM clipboard WHERE dataType = 1;")
+while IFS= read -r line; do clipArray+=("$line"); done < <(/usr/bin/sqlite3 "$db_path/$db_name" "SELECT dataHash FROM clipboard WHERE dataType = 1;")
 
 # loop thru all tiffs in database storage folder, and validate
-cd "$HOME/$db_path/$db_name.data" || { echo "could not cd to db storage folder"; exit 1; }
+cd "$db_path/$db_name.data" || { echo "could not cd to db storage folder"; exit 1; }
 
 shopt -s nullglob  # enable
 for i in *.tiff *.png ; do

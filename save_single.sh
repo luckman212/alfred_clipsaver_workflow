@@ -41,7 +41,7 @@ if [[ -r $img_pathname ]]; then
   fi
   if /usr/bin/sips -s format $fmt "$img_pathname" --out "$dest_dir/${img_noext}.$fmt"; then
     if [[ ${delete_after_convert} == true ]]; then
-      /usr/bin/sqlite3 "$HOME/$db_path/$db_name" "DELETE FROM clipboard WHERE dataHash = \"$img_basename\" AND dataType = 1 LIMIT 1;"
+      /usr/bin/sqlite3 "$db_path/$db_name" "DELETE FROM clipboard WHERE dataHash = \"$img_basename\" AND dataType = 1 LIMIT 1;"
       rm "$img_pathname"
     fi
     open -a Finder "$dest_dir"
