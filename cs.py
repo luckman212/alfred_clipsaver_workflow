@@ -44,9 +44,8 @@ def listitems(fmt='png',num=1):
         try:
           with open(srcpath, "rb") as fp:
             plistobj = plistlib.load(fp)
-          img = plistobj[0]
-          ext = img.split(os.extsep)[-1].lower()
-          assert (os.path.exists(img) and ext in img_exts)
+          img = next(i for i in plistobj if i.split(os.extsep)[-1].lower() in img_exts)
+          assert os.path.exists(img)
         except:
           continue
         title = ' '.join([ "File:", img ])
