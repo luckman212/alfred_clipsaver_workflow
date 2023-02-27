@@ -53,7 +53,7 @@ def listitems(fmt='png',num=1):
         sub = "File List"
       elif r[2] is None:
         title = r[1]
-        icon = { "path": "generic.png" }
+        icon = { "path": img }
         sub = "(unknown)"
         #match = 'unknown'
       else:
