@@ -6,14 +6,16 @@ It presents images from Alfred's clipboard history via a Script Filter, and allo
 
 Upon success, the original clipboard entry as well as the .tiff from Alfred's database will be removed if you have `delete_after_convert` set to true (File List objects in the clipboard history will remain untouched).
 
-## Workflow Variables
+## Workflow Configuration
 
-- `db_name` defaults to `clipboard.alfdb`
-- `db_path` defaults to `~/Library/Application Support/Alfred/Databases`
+All configuration is optional. The workflow should work "out of the box" without configuring any of these items. They are here for advanced users only.
+
+- `db_name` - override to specify a custom clipboard database file if needed
+- `db_path` - override the default clipboard database path
 - `dest_dir` where to save images if `save_to_current == false`, defaults to `~/Desktop/saved_clips`
 - `sf_clip_limit` (default: empty) an optional limit to constrain the number of results displayed in the Script Filter
 - `save_to_current` (default: false) - set to `true` if you want the workflow to put saved images in the directory of the "frontmost" Finder window
-- `default_format` (default: png) - set to e.g. `jpeg` etc (use `sips --formats` to see all available formats). You can override per invocation by passing as an argument.
+- `default_format` (default: png) - set to e.g. `jpg` etc. You can override per invocation by passing as an argument (use `sips --formats` to see all available formats)
 - `delete_after_convert` (default: false) - set to `true` if you want the source images deleted after successful conversion
 
 ## Usage Tips
