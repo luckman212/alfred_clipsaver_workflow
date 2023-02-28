@@ -32,16 +32,16 @@ fi
 if [[ -r $img_pathname ]]; then
   # make sure dest_dir exists
   if [[ ! -d $dest_dir ]]; then
-    /bin/mkdir -p "$dest_dir" || break_err 1
+    /bin/mkdir -p "$dest_dir" || break_err 1 "failed to create output dir"
   fi
   fmt=${format:-png}
   destfile=$dest_dir/${img_noext}.$fmt
-  if [[ ${img_pathname} == "${destfile,,}" ]]; then
+  if [[ ${img_pathname} == "${destfile}" ]]; then
     break_err 1 "(source and destination filename were the same)"
   fi
   if /usr/bin/sips -s format $fmt "$img_pathname" --out "$dest_dir/${img_noext}.$fmt"; then
-    if [[ ${delete_after_convert} == true ]]; then
-      /usr/bin/sqlite3 "$db_path/$db_name" "DELETE FROM clipboard WHERE dataHash = \"$img_basename\" AND dataType = 1 LIMIT 1;"
+    if [[ ${delete_after_convert} == true ]] && [[ -n $dataHash ]]; then
+      /usr/bin/sqlite3 "$db_path/$db_name" "DELETE FROM clipboard WHERE dataHash = \"$dataHash\" AND dataType = 1 LIMIT 1;"
       rm "$img_pathname"
     fi
     open -a Finder "$dest_dir"

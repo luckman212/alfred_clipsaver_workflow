@@ -65,7 +65,8 @@ def append_item(fn, img, title, sub, srcapp, ctime):
       "arg": il,
       "type": "file:skipcheck",
       "variables": {
-        "format": fmt.lower()
+        "format": fmt.lower(),
+        "dataHash": fn
       },
       "icon": { "path": img },
       "mods": {
