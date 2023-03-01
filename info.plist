@@ -548,7 +548,7 @@ All configuration is optional. The workflow should work "out of the box" without
 - Pass an image format e.g. `jpeg` as an argument to override your default format
 
 ## Screenshot:
-&lt;img width=500 src=https://raw.githubusercontent.com/luckman212/alfred_clipsaver_workflow/main/clipsaver.png&gt;
+![](./clipsaver.png)
 
 ## Download:
 https://github.com/luckman212/alfred_clipsaver_workflow/releases/latest/
@@ -801,7 +801,7 @@ https://www.alfredforum.com/topic/14400-clipsaver-save-images-from-clipboard-his
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>2.3.2</string>
+	<string>2.3.4</string>
 	<key>webaddress</key>
 	<string>https://github.com/luckman212/alfred_clipsaver_workflow</string>
 </dict>
