@@ -1,4 +1,4 @@
-# ClipSaver
+# ClipSaver 2
 
 This workflow is triggered with the keyword `cs` by default.
 
