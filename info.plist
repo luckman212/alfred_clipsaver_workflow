@@ -135,6 +135,8 @@
 				<false/>
 			</dict>
 		</array>
+		<key>F34B0F25-D875-426D-8071-3FACA31F0AE1</key>
+		<array/>
 		<key>F8D8F9B0-A655-474F-9D3C-68866A8D85E6</key>
 		<array>
 			<dict>
@@ -189,7 +191,7 @@
 				<key>openwith</key>
 				<string>/System/Library/CoreServices/Finder.app</string>
 				<key>sourcefile</key>
-				<string>~/{var:dest_dir}</string>
+				<string>{var:dest_dir}</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.openfile</string>
@@ -801,7 +803,7 @@ https://www.alfredforum.com/topic/14400-clipsaver-save-images-from-clipboard-his
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>2.3.4</string>
+	<string>2.3.5</string>
 	<key>webaddress</key>
 	<string>https://github.com/luckman212/alfred_clipsaver_workflow</string>
 </dict>
