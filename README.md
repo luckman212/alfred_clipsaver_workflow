@@ -1,6 +1,6 @@
 # ClipSaver
 
-This workflow is triggered with the `cs` keyword by default.
+This workflow is triggered with the keyword `cs` by default.
 
 It presents images from Alfred's clipboard history via a Script Filter, and allows selecting an image to be extracted, converted to a format of your choice (default is PNG) and placed in a folder of your choosing (default is on the Desktop, in a folder called `saved_clips`). You can optionally set the `save_to_current` environment variable to have the workflow save to the currently active Finder window.
 
