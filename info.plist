@@ -51,7 +51,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>F34B0F25-D875-426D-8071-3FACA31F0AE1</string>
+				<string>C8999852-47D6-4E54-ACBA-03F7186AF696</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -87,7 +87,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>F34B0F25-D875-426D-8071-3FACA31F0AE1</string>
+				<string>C8999852-47D6-4E54-ACBA-03F7186AF696</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -118,6 +118,21 @@
 				<string></string>
 				<key>sourceoutputuid</key>
 				<string>2A316F1C-9FE9-43A3-A61D-F5CEFDF2420D</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>C8999852-47D6-4E54-ACBA-03F7186AF696</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F34B0F25-D875-426D-8071-3FACA31F0AE1</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>49A1510D-1004-4FAD-B281-0A8703BD274F</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -188,17 +203,34 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>openwith</key>
-				<string>/System/Library/CoreServices/Finder.app</string>
-				<key>sourcefile</key>
-				<string>{var:dest_dir}</string>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:reveal_after}</string>
+						<key>matchcasesensitive</key>
+						<true/>
+						<key>matchmode</key>
+						<integer>5</integer>
+						<key>matchstring</key>
+						<string></string>
+						<key>outputlabel</key>
+						<string>reveal</string>
+						<key>uid</key>
+						<string>49A1510D-1004-4FAD-B281-0A8703BD274F</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string></string>
+				<key>hideelse</key>
+				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.openfile</string>
+			<string>alfred.workflow.utility.conditional</string>
 			<key>uid</key>
-			<string>F34B0F25-D875-426D-8071-3FACA31F0AE1</string>
+			<string>C8999852-47D6-4E54-ACBA-03F7186AF696</string>
 			<key>version</key>
-			<integer>3</integer>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -303,6 +335,21 @@
 			<string>6C55B9DC-6A05-4228-AD55-2311DD125885</string>
 			<key>version</key>
 			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>openwith</key>
+				<string>/System/Library/CoreServices/Finder.app</string>
+				<key>sourcefile</key>
+				<string>{var:dest_dir}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openfile</string>
+			<key>uid</key>
+			<string>F34B0F25-D875-426D-8071-3FACA31F0AE1</string>
+			<key>version</key>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -538,6 +585,7 @@ All configuration is optional. The workflow should work "out of the box" without
 - `dest_dir` where to save images if `save_to_current == false`, defaults to `~/Desktop/saved_clips`
 - `sf_clip_limit` (default: empty) an optional limit to constrain the number of results displayed in the Script Filter
 - `save_to_current` (default: false) - set to `true` if you want the workflow to put saved images in the directory of the "frontmost" Finder window
+- `reveal_after` (default: true) - set to `false` if you do not want the Finder to reveal the saved clips after the workflow runs.
 - `default_format` (default: png) - set to e.g. `jpg` etc. You can override per invocation by passing as an argument (use `sips --formats` to see all available formats)
 - `delete_after_convert` (default: false) - set to `true` if you want the source images deleted after successful conversion
 
@@ -621,6 +669,13 @@ https://www.alfredforum.com/topic/14400-clipsaver-save-images-from-clipboard-his
 			<key>ypos</key>
 			<real>185</real>
 		</dict>
+		<key>C8999852-47D6-4E54-ACBA-03F7186AF696</key>
+		<dict>
+			<key>xpos</key>
+			<real>840</real>
+			<key>ypos</key>
+			<real>45</real>
+		</dict>
 		<key>E3B4F7E0-C8D4-4C51-A42A-25FF8B353E84</key>
 		<dict>
 			<key>colorindex</key>
@@ -633,9 +688,9 @@ https://www.alfredforum.com/topic/14400-clipsaver-save-images-from-clipboard-his
 		<key>F34B0F25-D875-426D-8071-3FACA31F0AE1</key>
 		<dict>
 			<key>xpos</key>
-			<real>835</real>
+			<real>960</real>
 			<key>ypos</key>
-			<real>20</real>
+			<real>80</real>
 		</dict>
 		<key>F8D8F9B0-A655-474F-9D3C-68866A8D85E6</key>
 		<dict>
@@ -740,6 +795,25 @@ https://www.alfredforum.com/topic/14400-clipsaver-save-images-from-clipboard-his
 			<key>config</key>
 			<dict>
 				<key>default</key>
+				<true/>
+				<key>required</key>
+				<false/>
+				<key>text</key>
+				<string>Reveal clips after saving</string>
+			</dict>
+			<key>description</key>
+			<string></string>
+			<key>label</key>
+			<string></string>
+			<key>type</key>
+			<string>checkbox</string>
+			<key>variable</key>
+			<string>reveal_after</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
 				<string></string>
 				<key>placeholder</key>
 				<string>unlimited</string>
@@ -803,7 +877,7 @@ https://www.alfredforum.com/topic/14400-clipsaver-save-images-from-clipboard-his
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>2.3.5</string>
+	<string>2.3.6</string>
 	<key>webaddress</key>
 	<string>https://github.com/luckman212/alfred_clipsaver_workflow</string>
 </dict>

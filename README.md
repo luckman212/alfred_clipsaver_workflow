@@ -15,6 +15,7 @@ All configuration is optional. The workflow should work "out of the box" without
 - `dest_dir` where to save images if `save_to_current == false`, defaults to `~/Desktop/saved_clips`
 - `sf_clip_limit` (default: empty) an optional limit to constrain the number of results displayed in the Script Filter
 - `save_to_current` (default: false) - set to `true` if you want the workflow to put saved images in the directory of the "frontmost" Finder window
+- `reveal_after` (default: true) - set to `false` if you do not want the Finder to reveal the saved clips after the workflow runs.
 - `default_format` (default: png) - set to e.g. `jpg` etc. You can override per invocation by passing as an argument (use `sips --formats` to see all available formats)
 - `delete_after_convert` (default: false) - set to `true` if you want the source images deleted after successful conversion
 

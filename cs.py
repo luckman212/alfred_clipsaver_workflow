@@ -145,7 +145,7 @@ if fmt and fmt.upper() == 'JPG':
 
 #print(f'fmt:{fmt}',file=sys.stderr)
 #print(f'num:{num}',file=sys.stderr)
-listitems(fmt=fmt,num=num)
+listitems(fmt=fmt, num=num)
 
 if not items:
   items = [{
