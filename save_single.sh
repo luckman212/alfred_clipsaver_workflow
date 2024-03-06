@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
+exec 3>&1
+
 function break_err() {
+exec 1>&3
 cat <<EOF
 { "alfredworkflow": {
     "arg": "",
@@ -13,6 +16,8 @@ cat <<EOF
 EOF
 exit
 }
+
+exec 1>/dev/null
 
 unset errmsg
 img_pathname=$1
@@ -44,7 +49,6 @@ if [[ -r $img_pathname ]]; then
       /usr/bin/sqlite3 "$db_path/$db_name" "DELETE FROM clipboard WHERE dataHash = \"$dataHash\" AND dataType = 1 LIMIT 1;"
       rm "$img_pathname"
     fi
-    open -a Finder "$dest_dir"
     break_err 0
   else
     break_err 1

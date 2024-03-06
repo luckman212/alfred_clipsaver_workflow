@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
+exec 3>&1
+
 function break_err() {
+exec 1>&3
 cat <<EOF
 { "alfredworkflow": {
     "arg": "",
@@ -13,6 +16,8 @@ cat <<EOF
 EOF
 exit
 }
+
+exec 1>/dev/null
 
 unset errmsg
 num_items=$1
