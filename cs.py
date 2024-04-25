@@ -41,7 +41,7 @@ sf_clip_limit = envvar_to_int('sf_clip_limit', -1)
 
 #home_path = os.getenv('HOME')
 db_res = os.path.join(db_path, db_name)
-i_path = db_res + '.data'
+i_path = f'{db_res}.data'
 uidSeed = str(os.getenv('uidSeed', time.time()))
 img_exts = [ 'png', 'gif', 'jpg', 'jpeg', 'tiff', 'tif', 'bmp' ]
 
@@ -61,25 +61,29 @@ def append_item(fn, img, title, sub, srcapp, ctime):
       "uid": ''.join([ uidSeed, '.', fn ]),
       "variables": { "uidSeed": uidSeed },
       "title": title,
-      "subtitle": ctime + f' ↩ save as {fmt.upper()}',
+      "subtitle": f'{ctime} ↩ save as {fmt.upper()}',
       "arg": il,
       "type": "file:skipcheck",
       "variables": {
         "format": fmt.lower(),
-        "dataHash": fn
+        "dataHash": fn,
+        "action": 'single'
       },
       "icon": { "path": img },
       "mods": {
+        "ctrl": {
+          "arg": img,
+          "subtitle": f'{ctime} ↩ copy to clipboard',
+          "variables": { "action": 'copy' }
+        },
         "alt": {
           "arg": il,
-          "subtitle": ' '.join([ 'from:', sub ])
+          "subtitle": f'from: {sub}'
         },
         "cmd": {
           "arg": img,
-          "subtitle": ' '.join([ str(img), '(reveal)' ]),
-          "variables": {
-            "action": 'reveal'
-          }
+          "subtitle": f'{ctime} ↩ reveal in Finder',
+          "variables": { "action": 'reveal' }
         }
       },
       "quicklookurl": img

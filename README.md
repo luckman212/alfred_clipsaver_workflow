@@ -1,6 +1,8 @@
-# ClipSaver 2
+# ClipSaver
 
-This workflow is triggered with the keyword `cs` by default.
+This workflow is triggered with the `cs` keyword by default.
+
+As of version 2.4.x, the workflow also supports Alfred 5.5's new "Grid View" layout for previewing and actioning images.
 
 It presents images from Alfred's clipboard history via a Script Filter, and allows selecting an image to be extracted, converted to a format of your choice (default is PNG) and placed in a folder of your choosing (default is on the Desktop, in a folder called `saved_clips`). You can optionally set the `save_to_current` environment variable to have the workflow save to the currently active Finder window.
 

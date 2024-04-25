@@ -6,11 +6,57 @@
 	<string>com.alfredapp.clipsaver</string>
 	<key>connections</key>
 	<dict>
+		<key>330B881A-5B6F-4415-B32E-4F62B9A7864E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>33CD6F02-65A3-4497-9C85-E38FDE97FC8D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>AB178842-6707-4C5B-88D1-FC317394D8F9</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Reveal</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>A3FBF3CE-3218-4FC1-A8AC-9D056C1C948B</string>
+				<key>modifiers</key>
+				<integer>262144</integer>
+				<key>modifiersubtext</key>
+				<string>Copy image to clipboard</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>33CD6F02-65A3-4497-9C85-E38FDE97FC8D</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
 				<string>519C25B7-FDE4-4EA5-AF9B-7460EEDC70CE</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>395E6EB2-E24E-42B0-891C-2AE7E16160F2</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>5CC78342-FA2A-459C-A878-E2DC3621154B</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -61,6 +107,39 @@
 				<false/>
 			</dict>
 		</array>
+		<key>5CC78342-FA2A-459C-A878-E2DC3621154B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>EE17BA6D-5748-4F20-BE74-602EB8B9849F</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Reveal in Finder</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>330B881A-5B6F-4415-B32E-4F62B9A7864E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>E30762D4-CD07-433B-8B2D-AD06552A2225</string>
+				<key>modifiers</key>
+				<integer>262144</integer>
+				<key>modifiersubtext</key>
+				<string>Copy image to clipboard</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>5E9A0126-8C80-41E7-AD49-590FE0777A91</key>
 		<array>
 			<dict>
@@ -102,6 +181,19 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>F8D8F9B0-A655-474F-9D3C-68866A8D85E6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>8C1ABC6C-1ED1-4959-BAE0-E1027F44CBEF</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>395E6EB2-E24E-42B0-891C-2AE7E16160F2</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -176,11 +268,37 @@
 				<false/>
 			</dict>
 		</array>
+		<key>E30762D4-CD07-433B-8B2D-AD06552A2225</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A3FBF3CE-3218-4FC1-A8AC-9D056C1C948B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>E3B4F7E0-C8D4-4C51-A42A-25FF8B353E84</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
 				<string>40ABDE7E-4F25-4424-94E4-9489906D568D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>EE17BA6D-5748-4F20-BE74-602EB8B9849F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>AB178842-6707-4C5B-88D1-FC317394D8F9</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -207,7 +325,19 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>AB178842-6707-4C5B-88D1-FC317394D8F9</string>
+				<string>33CD6F02-65A3-4497-9C85-E38FDE97FC8D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>133259D6-46D2-493B-9A52-1D6DA9ACA303</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>EE17BA6D-5748-4F20-BE74-602EB8B9849F</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -219,11 +349,13 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>33CD6F02-65A3-4497-9C85-E38FDE97FC8D</string>
+				<string>E30762D4-CD07-433B-8B2D-AD06552A2225</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
+				<key>sourceoutputuid</key>
+				<string>B9B2E13B-5FFF-4E6B-98AA-4A849E116285</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -239,6 +371,27 @@
 	<string>ClipSaver</string>
 	<key>objects</key>
 	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{var:errmsg}</string>
+				<key>title</key>
+				<string>Warning</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>6C55B9DC-6A05-4228-AD55-2311DD125885</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -261,27 +414,6 @@
 			<string>5E9A0126-8C80-41E7-AD49-590FE0777A91</string>
 			<key>version</key>
 			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>{var:errmsg}</string>
-				<key>title</key>
-				<string>Warning</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>6C55B9DC-6A05-4228-AD55-2311DD125885</string>
-			<key>version</key>
-			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -346,13 +478,21 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>path</key>
-				<string>{query}</string>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>Clipboard history image conversion failed {var:errmsg}</string>
+				<key>title</key>
+				<string>Error</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.revealfile</string>
+			<string>alfred.workflow.output.notification</string>
 			<key>uid</key>
-			<string>AB178842-6707-4C5B-88D1-FC317394D8F9</string>
+			<string>E3B4F7E0-C8D4-4C51-A42A-25FF8B353E84</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -408,98 +548,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>Clipboard history image conversion failed {var:errmsg}</string>
-				<key>title</key>
-				<string>Error</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>E3B4F7E0-C8D4-4C51-A42A-25FF8B353E84</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>conditions</key>
-				<array>
-					<dict>
-						<key>inputstring</key>
-						<string>{var:action}</string>
-						<key>matchcasesensitive</key>
-						<false/>
-						<key>matchmode</key>
-						<integer>0</integer>
-						<key>matchstring</key>
-						<string>multisave</string>
-						<key>outputlabel</key>
-						<string>multi</string>
-						<key>uid</key>
-						<string>0D12874B-03FB-467B-BCBB-6BECAB99484A</string>
-					</dict>
-					<dict>
-						<key>inputstring</key>
-						<string>{var:action}</string>
-						<key>matchcasesensitive</key>
-						<false/>
-						<key>matchmode</key>
-						<integer>0</integer>
-						<key>matchstring</key>
-						<string>reveal</string>
-						<key>outputlabel</key>
-						<string>reveal</string>
-						<key>uid</key>
-						<string>951960C5-0D7C-4BE6-8488-FE4C72278C90</string>
-					</dict>
-				</array>
-				<key>elselabel</key>
-				<string>single</string>
-				<key>hideelse</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.conditional</string>
-			<key>uid</key>
-			<string>F8D8F9B0-A655-474F-9D3C-68866A8D85E6</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argument</key>
-				<string>'{query}', {variables}</string>
-				<key>cleardebuggertext</key>
-				<false/>
-				<key>processoutputs</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.debug</string>
-			<key>uid</key>
-			<string>4F366E5F-E737-440C-B9A3-FC859781F3DE</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.junction</string>
-			<key>uid</key>
-			<string>40ABDE7E-4F25-4424-94E4-9489906D568D</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -523,17 +571,101 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>openwith</key>
-				<string>/System/Library/CoreServices/Finder.app</string>
-				<key>sourcefile</key>
-				<string>{var:dest_dir}</string>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:action}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>multisave</string>
+						<key>outputlabel</key>
+						<string>multisave</string>
+						<key>uid</key>
+						<string>0D12874B-03FB-467B-BCBB-6BECAB99484A</string>
+					</dict>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:action}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>single</string>
+						<key>outputlabel</key>
+						<string>single</string>
+						<key>uid</key>
+						<string>133259D6-46D2-493B-9A52-1D6DA9ACA303</string>
+					</dict>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:action}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>reveal</string>
+						<key>outputlabel</key>
+						<string>reveal</string>
+						<key>uid</key>
+						<string>951960C5-0D7C-4BE6-8488-FE4C72278C90</string>
+					</dict>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:action}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>copy</string>
+						<key>outputlabel</key>
+						<string>copy</string>
+						<key>uid</key>
+						<string>B9B2E13B-5FFF-4E6B-98AA-4A849E116285</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string></string>
+				<key>hideelse</key>
+				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.openfile</string>
+			<string>alfred.workflow.utility.conditional</string>
 			<key>uid</key>
-			<string>F34B0F25-D875-426D-8071-3FACA31F0AE1</string>
+			<string>F8D8F9B0-A655-474F-9D3C-68866A8D85E6</string>
 			<key>version</key>
-			<integer>3</integer>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.junction</string>
+			<key>uid</key>
+			<string>40ABDE7E-4F25-4424-94E4-9489906D568D</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>'{query}', {variables}</string>
+				<key>cleardebuggertext</key>
+				<false/>
+				<key>processoutputs</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.debug</string>
+			<key>uid</key>
+			<string>4F366E5F-E737-440C-B9A3-FC859781F3DE</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -584,6 +716,21 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>openwith</key>
+				<string>/System/Library/CoreServices/Finder.app</string>
+				<key>sourcefile</key>
+				<string>{var:dest_dir}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openfile</string>
+			<key>uid</key>
+			<string>F34B0F25-D875-426D-8071-3FACA31F0AE1</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>conditions</key>
 				<array>
 					<dict>
@@ -613,11 +760,164 @@
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>path</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.revealfile</string>
+			<key>uid</key>
+			<string>AB178842-6707-4C5B-88D1-FC317394D8F9</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.junction</string>
+			<key>uid</key>
+			<string>EE17BA6D-5748-4F20-BE74-602EB8B9849F</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>columncount</key>
+				<integer>5</integer>
+				<key>filterable</key>
+				<true/>
+				<key>fixedorder</key>
+				<true/>
+				<key>imageaspect</key>
+				<integer>0</integer>
+				<key>inputfile</key>
+				<string></string>
+				<key>inputtype</key>
+				<integer>0</integer>
+				<key>loadingtext</key>
+				<string></string>
+				<key>showsubtitles</key>
+				<true/>
+				<key>showtitles</key>
+				<true/>
+				<key>subtitlesinfooter</key>
+				<true/>
+				<key>titlesinfooter</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.userinterface.grid</string>
+			<key>uid</key>
+			<string>5CC78342-FA2A-459C-A878-E2DC3621154B</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>tasksettings</key>
+				<dict/>
+				<key>taskuid</key>
+				<string>com.alfredapp.automation.core/macOS/clipboard.set.image.data</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.automation.task</string>
+			<key>uid</key>
+			<string>A3FBF3CE-3218-4FC1-A8AC-9D056C1C948B</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>keyword</key>
+				<string>cs</string>
+				<key>subtext</key>
+				<string>Display results in enlarged Grid View</string>
+				<key>text</key>
+				<string>Grid View</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>8C1ABC6C-1ED1-4959-BAE0-E1027F44CBEF</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>imageresizemode</key>
+				<integer>0</integer>
+				<key>stackview</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.userinterface.image</string>
+			<key>uid</key>
+			<string>330B881A-5B6F-4415-B32E-4F62B9A7864E</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>/usr/bin/sqlite3 \
+  "${HOME}/Library/Application Support/Alfred/Databases/clipboard.alfdb" \
+  ".parameter set :img_dir '~/Library/Application Support/Alfred/Databases/clipboard.alfdb.data/'" \
+  "SELECT JSON_OBJECT('items', JSON_GROUP_ARRAY(JSON_OBJECT(
+    -- 978307200 is timeIntervalSinceReferenceDate in Unix time
+    'title', strftime('%Y/%m/%d %H:%M:%S', datetime(ts + 978307200, 'unixepoch')),
+    'subtitle', app,
+    'arg', :img_dir || datahash,
+    'match', app,
+    'icon', JSON_OBJECT('path', :img_dir || datahash))))
+  AS JSON_RESULT FROM (
+    SELECT ts, app, datahash
+      FROM clipboard
+      WHERE dataType IS 1
+      ORDER BY ts
+      DESC)"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>11</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>395E6EB2-E24E-42B0-891C-2AE7E16160F2</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.junction</string>
+			<key>uid</key>
+			<string>E30762D4-CD07-433B-8B2D-AD06552A2225</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string># ClipSaver
 
 This workflow is triggered with the `cs` keyword by default.
+
+As of version 2.4.x, the workflow also supports Alfred 5.5's new "Grid View" layout for previewing and actioning images.
 
 It presents images from Alfred's clipboard history via a Script Filter, and allows selecting an image to be extracted, converted to a format of your choice (default is PNG) and placed in a folder of your choosing (default is on the Desktop, in a folder called `saved_clips`). You can optionally set the `save_to_current` environment variable to have the workflow save to the currently active Finder window.
 
@@ -654,108 +954,157 @@ https://github.com/luckman212/alfred_clipsaver_workflow/releases/latest/
 https://www.alfredforum.com/topic/14400-clipsaver-save-images-from-clipboard-history-to-png-files/</string>
 	<key>uidata</key>
 	<dict>
+		<key>330B881A-5B6F-4415-B32E-4F62B9A7864E</key>
+		<dict>
+			<key>xpos</key>
+			<real>580</real>
+			<key>ypos</key>
+			<real>475</real>
+		</dict>
 		<key>33CD6F02-65A3-4497-9C85-E38FDE97FC8D</key>
 		<dict>
 			<key>note</key>
 			<string>save_single</string>
 			<key>xpos</key>
-			<real>365</real>
+			<real>575</real>
 			<key>ypos</key>
-			<real>310</real>
+			<real>170</real>
+		</dict>
+		<key>395E6EB2-E24E-42B0-891C-2AE7E16160F2</key>
+		<dict>
+			<key>xpos</key>
+			<real>210</real>
+			<key>ypos</key>
+			<real>475</real>
 		</dict>
 		<key>40ABDE7E-4F25-4424-94E4-9489906D568D</key>
 		<dict>
 			<key>xpos</key>
-			<real>975</real>
+			<real>1175</real>
 			<key>ypos</key>
-			<real>220</real>
+			<real>185</real>
 		</dict>
 		<key>4F366E5F-E737-440C-B9A3-FC859781F3DE</key>
 		<dict>
 			<key>note</key>
 			<string>enable dotted line to debug</string>
 			<key>xpos</key>
-			<real>1115</real>
+			<real>1315</real>
 			<key>ypos</key>
-			<real>220</real>
+			<real>185</real>
 		</dict>
 		<key>519C25B7-FDE4-4EA5-AF9B-7460EEDC70CE</key>
 		<dict>
 			<key>xpos</key>
-			<real>525</real>
+			<real>740</real>
 			<key>ypos</key>
-			<real>330</real>
+			<real>190</real>
+		</dict>
+		<key>5CC78342-FA2A-459C-A878-E2DC3621154B</key>
+		<dict>
+			<key>xpos</key>
+			<real>385</real>
+			<key>ypos</key>
+			<real>475</real>
 		</dict>
 		<key>5E9A0126-8C80-41E7-AD49-590FE0777A91</key>
 		<dict>
 			<key>note</key>
 			<string>save_multi</string>
 			<key>xpos</key>
-			<real>365</real>
+			<real>575</real>
 			<key>ypos</key>
-			<real>60</real>
+			<real>30</real>
 		</dict>
 		<key>6C55B9DC-6A05-4228-AD55-2311DD125885</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>3</integer>
 			<key>xpos</key>
-			<real>740</real>
+			<real>940</real>
 			<key>ypos</key>
-			<real>60</real>
+			<real>30</real>
 		</dict>
 		<key>71A0EF86-42D5-4C0A-8656-CB6FEAD6F857</key>
 		<dict>
 			<key>xpos</key>
 			<real>45</real>
 			<key>ypos</key>
-			<real>185</real>
+			<real>170</real>
+		</dict>
+		<key>8C1ABC6C-1ED1-4959-BAE0-E1027F44CBEF</key>
+		<dict>
+			<key>xpos</key>
+			<real>45</real>
+			<key>ypos</key>
+			<real>475</real>
+		</dict>
+		<key>A3FBF3CE-3218-4FC1-A8AC-9D056C1C948B</key>
+		<dict>
+			<key>xpos</key>
+			<real>940</real>
+			<key>ypos</key>
+			<real>475</real>
 		</dict>
 		<key>A8AB7CFC-4F7B-436E-8EAD-C48244230F84</key>
 		<dict>
 			<key>xpos</key>
-			<real>525</real>
+			<real>740</real>
 			<key>ypos</key>
-			<real>65</real>
+			<real>35</real>
 		</dict>
 		<key>AB178842-6707-4C5B-88D1-FC317394D8F9</key>
 		<dict>
 			<key>xpos</key>
-			<real>365</real>
+			<real>785</real>
 			<key>ypos</key>
-			<real>185</real>
+			<real>355</real>
 		</dict>
 		<key>C8999852-47D6-4E54-ACBA-03F7186AF696</key>
 		<dict>
 			<key>xpos</key>
-			<real>810</real>
+			<real>980</real>
 			<key>ypos</key>
-			<real>355</real>
+			<real>300</real>
+		</dict>
+		<key>E30762D4-CD07-433B-8B2D-AD06552A2225</key>
+		<dict>
+			<key>xpos</key>
+			<real>645</real>
+			<key>ypos</key>
+			<real>625</real>
 		</dict>
 		<key>E3B4F7E0-C8D4-4C51-A42A-25FF8B353E84</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>1</integer>
 			<key>xpos</key>
-			<real>740</real>
+			<real>940</real>
 			<key>ypos</key>
-			<real>190</real>
+			<real>155</real>
+		</dict>
+		<key>EE17BA6D-5748-4F20-BE74-602EB8B9849F</key>
+		<dict>
+			<key>xpos</key>
+			<real>645</real>
+			<key>ypos</key>
+			<real>385</real>
 		</dict>
 		<key>F34B0F25-D875-426D-8071-3FACA31F0AE1</key>
 		<dict>
 			<key>note</key>
 			<string>if reveal_after == true</string>
 			<key>xpos</key>
-			<real>975</real>
+			<real>1135</real>
 			<key>ypos</key>
-			<real>325</real>
+			<real>270</real>
 		</dict>
 		<key>F8D8F9B0-A655-474F-9D3C-68866A8D85E6</key>
 		<dict>
 			<key>xpos</key>
-			<real>250</real>
+			<real>210</real>
 			<key>ypos</key>
-			<real>190</real>
+			<real>175</real>
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>
@@ -764,13 +1113,13 @@ https://www.alfredforum.com/topic/14400-clipsaver-save-images-from-clipboard-his
 			<key>config</key>
 			<dict>
 				<key>default</key>
-				<string></string>
+				<string>~/Desktop</string>
 				<key>filtermode</key>
 				<integer>1</integer>
 				<key>placeholder</key>
-				<string>~/Desktop/saved_clips</string>
+				<string>~/Desktop</string>
 				<key>required</key>
-				<false/>
+				<true/>
 			</dict>
 			<key>description</key>
 			<string>Folder in which to save converted images</string>
@@ -935,7 +1284,7 @@ https://www.alfredforum.com/topic/14400-clipsaver-save-images-from-clipboard-his
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>2.3.7</string>
+	<string>2.4.2</string>
 	<key>webaddress</key>
 	<string>https://github.com/luckman212/alfred_clipsaver_workflow</string>
 </dict>
