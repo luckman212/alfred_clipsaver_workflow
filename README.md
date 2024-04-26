@@ -1,12 +1,20 @@
 # ClipSaver
 
-This workflow is triggered with the `cs` keyword by default.
-
-As of version 2.4.x, the workflow also supports Alfred 5.5's new "Grid View" layout for previewing and actioning images.
+This workflow is triggered with the `cs` keyword by default. You can change the keyword if desired via the configuration window.
 
 It presents images from Alfred's clipboard history via a Script Filter, and allows selecting an image to be extracted, converted to a format of your choice (default is PNG) and placed in a folder of your choosing (default is on the Desktop, in a folder called `saved_clips`). You can optionally set the `save_to_current` environment variable to have the workflow save to the currently active Finder window.
 
 Upon success, the original clipboard entry as well as the .tiff from Alfred's database will be removed if you have `delete_after_convert` set to true (File List objects in the clipboard history will remain untouched).
+
+Some features require [CleanShot](https://cleanshot.com/) to be installed. If you don't have CleanShot, you can still use the other features of the workflow.
+- Holding ⇧shift while actioning from the Grid View will Pin (float) the selected images to the screen
+- Holding ⌥option will open the images in the Annotation (edit) tool.
+
+## Grid View (Alfred 5.5 only)
+
+As of version 2.4, the workflow also supports Alfred 5.5's new "Grid View" layout for previewing and actioning images. You can drag and drop images out of the grid with the mouse. While in Grid mode, press ⌘0 to toggle a larger view. You can use the File Buffer to select multiple images and action them.
+
+> _If the File Buffer contains contents, they will be used instead of the "last selection"._
 
 ## Workflow Configuration
 
