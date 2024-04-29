@@ -168,5 +168,19 @@ variables = {
   'dest_dir': dest_dir,
   'default_format': default_format
 }
-output = { "variables": variables, "skipknowledge": True, "items": items }
+
+items.insert(0, {
+  "title": "Grid View",
+  "subtitle": "Display results in enlarged Grid View",
+  "arg": "",
+  "icon": { "path": "grid.png" },
+  "variables": { "action": "grid" }
+})
+
+output = {
+  "variables": variables,
+  "skipknowledge": True,
+  "items": items
+}
+
 json.dump(output, sys.stdout)

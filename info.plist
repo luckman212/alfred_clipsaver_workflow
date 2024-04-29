@@ -334,19 +334,6 @@
 				<false/>
 			</dict>
 		</array>
-		<key>8C1ABC6C-1ED1-4959-BAE0-E1027F44CBEF</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>395E6EB2-E24E-42B0-891C-2AE7E16160F2</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>9D05394A-A5F5-4A2B-8AA7-3C06528411D3</key>
 		<array>
 			<dict>
@@ -528,6 +515,18 @@
 				<string></string>
 				<key>sourceoutputuid</key>
 				<string>951960C5-0D7C-4BE6-8488-FE4C72278C90</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>395E6EB2-E24E-42B0-891C-2AE7E16160F2</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>2F385C67-1D18-4D25-8AA7-EF492F9A4E7B</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -719,55 +718,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>alfredfiltersresults</key>
-				<false/>
-				<key>alfredfiltersresultsmatchmode</key>
-				<integer>2</integer>
-				<key>argumenttreatemptyqueryasnil</key>
-				<true/>
-				<key>argumenttrimmode</key>
-				<integer>0</integer>
-				<key>argumenttype</key>
-				<integer>1</integer>
-				<key>escaping</key>
-				<integer>0</integer>
-				<key>keyword</key>
-				<string>{var:kw_trigger}</string>
-				<key>queuedelaycustom</key>
-				<integer>3</integer>
-				<key>queuedelayimmediatelyinitially</key>
-				<true/>
-				<key>queuedelaymode</key>
-				<integer>0</integer>
-				<key>queuemode</key>
-				<integer>1</integer>
-				<key>runningsubtext</key>
-				<string>Fetching clipboard items</string>
-				<key>script</key>
-				<string></string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string>cs.py</string>
-				<key>subtext</key>
-				<string></string>
-				<key>title</key>
-				<string>Save images from clipboard history</string>
-				<key>type</key>
-				<integer>8</integer>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>71A0EF86-42D5-4C0A-8656-CB6FEAD6F857</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>conditions</key>
 				<array>
 					<dict>
@@ -826,6 +776,20 @@
 						<key>uid</key>
 						<string>B9B2E13B-5FFF-4E6B-98AA-4A849E116285</string>
 					</dict>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:action}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>grid</string>
+						<key>outputlabel</key>
+						<string>grid</string>
+						<key>uid</key>
+						<string>2F385C67-1D18-4D25-8AA7-EF492F9A4E7B</string>
+					</dict>
 				</array>
 				<key>elselabel</key>
 				<string></string>
@@ -836,6 +800,14 @@
 			<string>alfred.workflow.utility.conditional</string>
 			<key>uid</key>
 			<string>F8D8F9B0-A655-474F-9D3C-68866A8D85E6</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.junction</string>
+			<key>uid</key>
+			<string>40ABDE7E-4F25-4424-94E4-9489906D568D</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -853,14 +825,6 @@
 			<string>alfred.workflow.utility.debug</string>
 			<key>uid</key>
 			<string>4F366E5F-E737-440C-B9A3-FC859781F3DE</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.junction</string>
-			<key>uid</key>
-			<string>40ABDE7E-4F25-4424-94E4-9489906D568D</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -909,6 +873,55 @@
 			<string>519C25B7-FDE4-4EA5-AF9B-7460EEDC70CE</string>
 			<key>version</key>
 			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>2</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>{var:kw_trigger}</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Fetching clipboard items</string>
+				<key>script</key>
+				<string></string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>cs.py</string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>Save images from clipboard history</string>
+				<key>type</key>
+				<integer>8</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>71A0EF86-42D5-4C0A-8656-CB6FEAD6F857</string>
+			<key>version</key>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -975,27 +988,6 @@
 			<string>alfred.workflow.utility.junction</string>
 			<key>uid</key>
 			<string>EE17BA6D-5748-4F20-BE74-602EB8B9849F</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>1</integer>
-				<key>keyword</key>
-				<string>{var:kw_trigger}</string>
-				<key>subtext</key>
-				<string>Display results in enlarged Grid View</string>
-				<key>text</key>
-				<string>Grid View</string>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>8C1ABC6C-1ED1-4959-BAE0-E1027F44CBEF</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1198,14 +1190,6 @@
 			<integer>1</integer>
 		</dict>
 		<dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.junction</string>
-			<key>uid</key>
-			<string>CCD4FC35-EA9E-47A0-97D7-123CE12B9F47</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
 			<key>config</key>
 			<dict>
 				<key>json</key>
@@ -1215,6 +1199,14 @@
 			<string>alfred.workflow.utility.json</string>
 			<key>uid</key>
 			<string>A0D95AE6-FB7D-4C9D-BD5E-835FA2DC88F0</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.junction</string>
+			<key>uid</key>
+			<string>CCD4FC35-EA9E-47A0-97D7-123CE12B9F47</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1544,9 +1536,9 @@ https://www.alfredforum.com/topic/14400-clipsaver-save-images-from-clipboard-his
 		<key>71A0EF86-42D5-4C0A-8656-CB6FEAD6F857</key>
 		<dict>
 			<key>xpos</key>
-			<real>45</real>
+			<real>35</real>
 			<key>ypos</key>
-			<real>170</real>
+			<real>200</real>
 		</dict>
 		<key>7D984E52-7568-4C03-B70F-92EFA7067021</key>
 		<dict>
@@ -1556,13 +1548,6 @@ https://www.alfredforum.com/topic/14400-clipsaver-save-images-from-clipboard-his
 			<real>370</real>
 			<key>ypos</key>
 			<real>505</real>
-		</dict>
-		<key>8C1ABC6C-1ED1-4959-BAE0-E1027F44CBEF</key>
-		<dict>
-			<key>xpos</key>
-			<real>45</real>
-			<key>ypos</key>
-			<real>475</real>
 		</dict>
 		<key>9D05394A-A5F5-4A2B-8AA7-3C06528411D3</key>
 		<dict>
@@ -1659,7 +1644,7 @@ https://www.alfredforum.com/topic/14400-clipsaver-save-images-from-clipboard-his
 		<key>F8D8F9B0-A655-474F-9D3C-68866A8D85E6</key>
 		<dict>
 			<key>xpos</key>
-			<real>210</real>
+			<real>195</real>
 			<key>ypos</key>
 			<real>175</real>
 		</dict>
@@ -1896,7 +1881,7 @@ https://www.alfredforum.com/topic/14400-clipsaver-save-images-from-clipboard-his
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>2.5.0</string>
+	<string>2.5.1</string>
 	<key>webaddress</key>
 	<string>https://github.com/luckman212/alfred_clipsaver_workflow</string>
 </dict>
