@@ -35,6 +35,7 @@ All configuration is optional. The workflow should work "out of the box" without
 - Tap `⌥OPTION` to show the path to the app that created that image in the subtitle
 - Hold `⌘CMD` when actioning the item to Reveal the original image in Alfred's db folder
 - Pass a number as an argument to the script to save X number of clips in bulk
+- Pass an integer followed by `s|m|h|d` (sec,min,hrs,days) e.g. `90m` to save the clips captured in the last 90 minutes
 - Pass an image format e.g. `jpeg` as an argument to override your default format
 
 ## Screenshot:

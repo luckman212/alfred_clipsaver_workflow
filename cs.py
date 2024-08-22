@@ -1,49 +1,15 @@
 #!/usr/bin/env python3
 
 import os
+import re
 import sys
-import time
 import json
 import sqlite3
 import plistlib
+import datetime as dt
 from contextlib import contextmanager
+from wf_common import *
 #from pathlib import Path
-
-def envvar(v: str, dv: str) -> str:
-  return str(os.getenv(v) or dv)
-
-#for checkboxes - unchecked aka `0` returns `false`
-def envvar_to_bool(v: str) -> str:
-  try:
-    b = int(os.getenv(v))
-  except:
-    b = 0
-  return str(bool(b)).lower()
-
-def envvar_to_int(v: str, dv: int=0) -> int:
-  try:
-    return int(os.getenv(v))
-  except:
-    pass
-  try:
-    return int(dv)
-  except:
-    return 0
-
-#wf vars
-db_name = envvar('db_name', 'clipboard.alfdb')
-db_path = os.path.expanduser(envvar('db_path', '~/Library/Application Support/Alfred/Databases'))
-dest_dir = os.path.expanduser(envvar('dest_dir', '~/Desktop/saved_clips')).lower()
-default_format = envvar('default_format', 'png').lower()
-delete_after_convert = envvar_to_bool('delete_after_convert')
-save_to_current = envvar_to_bool('save_to_current')
-sf_clip_limit = envvar_to_int('sf_clip_limit', -1)
-
-#home_path = os.getenv('HOME')
-db_res = os.path.join(db_path, db_name)
-i_path = f'{db_res}.data'
-uidSeed = str(os.getenv('uidSeed', time.time()))
-img_exts = [ 'png', 'gif', 'jpg', 'jpeg', 'tiff', 'tif', 'bmp' ]
 
 @contextmanager
 def database(path):
@@ -89,7 +55,21 @@ def append_item(fn, img, title, sub, srcapp, ctime):
       "quicklookurl": img
     })
 
-def listitems(fmt='png',num=1):
+def listitems(fmt='png', num=1, since=None, human=None):
+  if since and human:
+    atleast = int(dt.datetime.now().timestamp()) - since - 978307200
+    items.append({
+      "title": f'↩ save time-filtered clips below (last {human}) as {fmt.upper()}',
+      "arg": atleast,
+      "icon": { "path": "clock.png" },
+      "variables": {
+        "action": 'multisave_time',
+        "format": fmt.lower()
+      },
+      "quicklookurl": ''
+    })
+  else:
+    atleast = 0
   if num > 1:
     items.append({
       "title": f'↩ save last {num} clips as {fmt.upper()}',
@@ -102,21 +82,23 @@ def listitems(fmt='png',num=1):
     })
   with database(db_res) as db:
     #0=filename, 1=title, 2=src app, 3=time, 4=type (1=image from db,2=files)
-    rows = db.execute("SELECT dataHash,item,apppath,strftime('%Y-%m-%d %H:%M',ts+978307200,'unixepoch','localtime'),dataType from clipboard WHERE dataType IN (1,2) ORDER BY rowid DESC LIMIT ?", [sf_clip_limit])
+    rows = db.execute("SELECT dataHash,item,apppath,ts,dataType from clipboard WHERE dataType IN (1,2) AND ts >= ? ORDER BY rowid DESC LIMIT ?", [atleast, sf_clip_limit])
     for r in rows:
-      (fn, title, srcapp, ctime, dtype) = r
-      img = srcpath = os.path.join(i_path, fn)
+      (fn, title, srcapp, ts, dtype) = r
+      ts += 978307200
+      ctime = dt.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M')
+      img = os.path.join(i_path, fn)
       if dtype == 2:
         try:
-          with open(srcpath, "rb") as fp:
+          with open(img, "rb") as fp:
             plistobj = plistlib.load(fp)
         except:
           continue
-        imgfiles = [i for i in plistobj if i.split(os.extsep)[-1].lower() in img_exts]
-        for img in imgfiles:
-          title = ' '.join([ "File:", img ])
+        imgfiles = [i for i in plistobj if os.path.exists(i) and i.split(os.extsep)[-1].lower() in img_exts]
+        for f in imgfiles:
+          title = ' '.join([ "File:", f ])
           sub = f"File List {fn}"
-          append_item(fn,img,title,sub,srcapp,ctime)
+          append_item(fn,f,title,sub,srcapp,ctime)
       else:
         sub = srcapp or "(unknown)"
         append_item(fn,img,title,sub,srcapp,ctime)
@@ -128,17 +110,31 @@ except:
   pass
 
 items = []
-arg = fmt = None
+arg = fmt = sr_n = sr_str = None
 num = 1
 
-while len(args):
-  arg = args[0]
-  args = args[1:]
+# poor man's arg parser
+for a in args:
   try:
-    num = int(arg)
+    num = int(a)
+    continue
   except:
-    fmt = arg
     pass
+  try:
+    sr = re.match(r'([0-9]+)([smhd])', a, re.IGNORECASE)
+    sr_str = sr.group(0)
+    sr_n = int(sr.group(1))
+    sr_u = sr.group(2).lower()
+    if sr_u == 'm':
+      sr_n *= 60
+    if sr_u == 'h':
+      sr_n *= 3600
+    if sr_u == 'd':
+      sr_n *= 86400
+    continue
+  except:
+    pass
+  fmt = a.lower()
 
 if num < 1:
   num = 1
@@ -147,9 +143,13 @@ if fmt is None or len(str(fmt)) < 3:
 if fmt and fmt.upper() == 'JPG':
   fmt = 'jpeg'
 
-#print(f'fmt:{fmt}',file=sys.stderr)
-#print(f'num:{num}',file=sys.stderr)
-listitems(fmt=fmt, num=num)
+"""
+print(f'fmt:{fmt}',file=sys.stderr)
+print(f'num:{num}',file=sys.stderr)
+print(f'sr_n:{sr_n}',file=sys.stderr)
+"""
+
+listitems(fmt=fmt, num=num, since=sr_n, human=sr_str)
 
 if not items:
   items = [{

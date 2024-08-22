@@ -20,25 +20,15 @@ exit
 exec 1>/dev/null
 
 unset errmsg
-num_clips=$1
-max_clips=$(/usr/bin/sqlite3 "$db_path/$db_name" "SELECT COUNT(dataHash) FROM clipboard WHERE dataType = 1;")
+atleast=$1
 
 re='^[0-9]+$'
-if ! [[ $num_clips =~ $re ]] ; then
+if ! [[ $atleast =~ $re ]] ; then
   break_err 2 "not a number (NaN)"
 fi
 
-if [[ $num_clips -eq 0 ]] ; then
-  break_err 2 "num_clips must be >0"
-fi
-
-if [[ $max_clips -eq 0 ]]; then
-  break_err 2 "no image clips found in the database"
-fi
-
-if [[ $max_clips -lt "$num_clips" ]]; then
-  errmsg="not enough clips to fulfill request\nrequested: $num_clips, available: $max_clips (adjusted)"
-  num_clips=$max_clips
+if [[ $atleast -eq 0 ]] ; then
+  break_err 2 "atleast must be >0"
 fi
 
 if [[ $save_to_current == "true" ]]; then
@@ -64,12 +54,7 @@ fmt=${format:-png}
 while read -r src_fname ; do
   #echo 1>&2 "processing: [$src_fname]"
   source ./process_clip.bash
-done < <(./get_image_hashes.py --num_clips "$num_clips")
-
-# if ALL images were processed, run cleanup script
-if [[ $num_clips -eq $max_clips ]]; then
-  ./alfred_validate_cache.sh
-fi
+done < <(./get_image_hashes.py --atleast "$atleast")
 
 if [[ -n $errmsg ]]; then
   break_err 1 "$errmsg"

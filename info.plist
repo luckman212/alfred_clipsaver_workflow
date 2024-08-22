@@ -232,7 +232,7 @@
 				<key>modifiers</key>
 				<integer>524288</integer>
 				<key>modifiersubtext</key>
-				<string>Edit (Annotate) selected images using CleanShot</string>
+				<string>Press ↵ to edit (annotate) selected images using CleanShot</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -242,7 +242,7 @@
 				<key>modifiers</key>
 				<integer>131072</integer>
 				<key>modifiersubtext</key>
-				<string>Float (Pin) selected images using CleanShot</string>
+				<string>Press ↵ to float (pin) selected images using CleanShot</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -252,6 +252,19 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>A8AB7CFC-4F7B-436E-8EAD-C48244230F84</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>68014C82-BAD9-4CFC-A6C1-A10A58F10E79</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>4E6033E8-BC67-4836-B299-F64154D52F1A</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -338,7 +351,20 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>4E6033E8-BC67-4836-B299-F64154D52F1A</string>
+				<string>68014C82-BAD9-4CFC-A6C1-A10A58F10E79</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>A02D5916-1E4A-4207-80F9-AE36DF096158</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A8AB7CFC-4F7B-436E-8EAD-C48244230F84</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -484,6 +510,18 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
+				<string>A02D5916-1E4A-4207-80F9-AE36DF096158</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>B3345938-CA67-4E6A-B476-62E1ADB3B7EF</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
 				<string>5E9A0126-8C80-41E7-AD49-590FE0777A91</string>
 				<key>modifiers</key>
 				<integer>0</integer>
@@ -567,6 +605,29 @@
 	<string>ClipSaver</string>
 	<key>objects</key>
 	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string></string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>save_multi_time.sh</string>
+				<key>type</key>
+				<integer>8</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>A02D5916-1E4A-4207-80F9-AE36DF096158</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -674,52 +735,22 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>Clipboard history image conversion failed {var:errmsg}</string>
-				<key>title</key>
-				<string>Error</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>E3B4F7E0-C8D4-4C51-A42A-25FF8B353E84</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>0</integer>
-				<key>script</key>
-				<string></string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string>save_single.sh</string>
-				<key>type</key>
-				<integer>8</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>33CD6F02-65A3-4497-9C85-E38FDE97FC8D</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>conditions</key>
 				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:action}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>multisave_time</string>
+						<key>outputlabel</key>
+						<string>multisave_time</string>
+						<key>uid</key>
+						<string>B3345938-CA67-4E6A-B476-62E1ADB3B7EF</string>
+					</dict>
 					<dict>
 						<key>inputstring</key>
 						<string>{var:action}</string>
@@ -804,12 +835,97 @@
 			<integer>1</integer>
 		</dict>
 		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>2</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>{var:kw_trigger}</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Fetching clipboard items</string>
+				<key>script</key>
+				<string></string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>cs.py</string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>Save images from clipboard history</string>
+				<key>type</key>
+				<integer>8</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
 			<key>type</key>
-			<string>alfred.workflow.utility.junction</string>
+			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
-			<string>40ABDE7E-4F25-4424-94E4-9489906D568D</string>
+			<string>71A0EF86-42D5-4C0A-8656-CB6FEAD6F857</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>Clipboard history image conversion failed {var:errmsg}</string>
+				<key>title</key>
+				<string>Error</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>E3B4F7E0-C8D4-4C51-A42A-25FF8B353E84</string>
 			<key>version</key>
 			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string></string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>save_single.sh</string>
+				<key>type</key>
+				<integer>8</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>33CD6F02-65A3-4497-9C85-E38FDE97FC8D</string>
+			<key>version</key>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -825,6 +941,14 @@
 			<string>alfred.workflow.utility.debug</string>
 			<key>uid</key>
 			<string>4F366E5F-E737-440C-B9A3-FC859781F3DE</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.junction</string>
+			<key>uid</key>
+			<string>40ABDE7E-4F25-4424-94E4-9489906D568D</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -873,55 +997,6 @@
 			<string>519C25B7-FDE4-4EA5-AF9B-7460EEDC70CE</string>
 			<key>version</key>
 			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>alfredfiltersresults</key>
-				<false/>
-				<key>alfredfiltersresultsmatchmode</key>
-				<integer>2</integer>
-				<key>argumenttreatemptyqueryasnil</key>
-				<true/>
-				<key>argumenttrimmode</key>
-				<integer>0</integer>
-				<key>argumenttype</key>
-				<integer>1</integer>
-				<key>escaping</key>
-				<integer>0</integer>
-				<key>keyword</key>
-				<string>{var:kw_trigger}</string>
-				<key>queuedelaycustom</key>
-				<integer>3</integer>
-				<key>queuedelayimmediatelyinitially</key>
-				<true/>
-				<key>queuedelaymode</key>
-				<integer>0</integer>
-				<key>queuemode</key>
-				<integer>1</integer>
-				<key>runningsubtext</key>
-				<string>Fetching clipboard items</string>
-				<key>script</key>
-				<string></string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string>cs.py</string>
-				<key>subtext</key>
-				<string></string>
-				<key>title</key>
-				<string>Save images from clipboard history</string>
-				<key>type</key>
-				<integer>8</integer>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>71A0EF86-42D5-4C0A-8656-CB6FEAD6F857</string>
-			<key>version</key>
-			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -994,6 +1069,21 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>imageresizemode</key>
+				<integer>0</integer>
+				<key>stackview</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.userinterface.image</string>
+			<key>uid</key>
+			<string>330B881A-5B6F-4415-B32E-4F62B9A7864E</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>columncount</key>
 				<integer>4</integer>
 				<key>filterable</key>
@@ -1041,7 +1131,7 @@
     'subtitle', app,
     'arg', :img_dir || datahash,
     'match', app,
-    'type', 'file',
+    'type', 'file:skipcheck',
     'icon', JSON_OBJECT('path', :img_dir || datahash))))
   AS JSON_RESULT FROM (
     SELECT ts, app, datahash
@@ -1062,21 +1152,6 @@
 			<string>395E6EB2-E24E-42B0-891C-2AE7E16160F2</string>
 			<key>version</key>
 			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>imageresizemode</key>
-				<integer>0</integer>
-				<key>stackview</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.userinterface.image</string>
-			<key>uid</key>
-			<string>330B881A-5B6F-4415-B32E-4F62B9A7864E</string>
-			<key>version</key>
-			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1154,7 +1229,7 @@
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
-				<string>cleanshot.sh</string>
+				<string>~/Sync/Scripts/cleanshot.sh</string>
 				<key>type</key>
 				<integer>8</integer>
 			</dict>
@@ -1192,13 +1267,17 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>json</key>
-				<string>{ "alfredworkflow" : { "arg" : "{var:selection}" } }</string>
+				<key>addfilestobuffer</key>
+				<false/>
+				<key>clearbuffer</key>
+				<false/>
+				<key>outputtype</key>
+				<integer>0</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.utility.json</string>
+			<string>alfred.workflow.action.buffer</string>
 			<key>uid</key>
-			<string>A0D95AE6-FB7D-4C9D-BD5E-835FA2DC88F0</string>
+			<string>FF2B9F42-D9A9-42D6-ABDB-8691AC88D747</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1213,17 +1292,13 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>addfilestobuffer</key>
-				<false/>
-				<key>clearbuffer</key>
-				<false/>
-				<key>outputtype</key>
-				<integer>0</integer>
+				<key>json</key>
+				<string>{ "alfredworkflow" : { "arg" : "{var:selection}" } }</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.buffer</string>
+			<string>alfred.workflow.utility.json</string>
 			<key>uid</key>
-			<string>FF2B9F42-D9A9-42D6-ABDB-8691AC88D747</string>
+			<string>A0D95AE6-FB7D-4C9D-BD5E-835FA2DC88F0</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1278,6 +1353,26 @@
 			<string>alfred.workflow.utility.json</string>
 			<key>uid</key>
 			<string>510F5A09-C26E-49C1-8C80-4AE3C0411E36</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{query}</string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>action</key>
+					<string>pin</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>68014C82-BAD9-4CFC-A6C1-A10A58F10E79</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1395,6 +1490,7 @@ All configuration is optional. The workflow should work "out of the box" without
 - Tap `⌥OPTION` to show the path to the app that created that image in the subtitle
 - Hold `⌘CMD` when actioning the item to Reveal the original image in Alfred's db folder
 - Pass a number as an argument to the script to save X number of clips in bulk
+- Pass an integer followed by `s|m|h|d` (sec,min,hrs,days) e.g. `90m` to save the clips captured in the last 90 minutes
 - Pass an image format e.g. `jpeg` as an argument to override your default format
 
 ## Screenshot:
@@ -1412,39 +1508,39 @@ https://www.alfredforum.com/topic/14400-clipsaver-save-images-from-clipboard-his
 			<key>note</key>
 			<string>edit</string>
 			<key>xpos</key>
-			<real>465</real>
+			<real>435</real>
 			<key>ypos</key>
-			<real>775</real>
+			<real>860</real>
 		</dict>
 		<key>15A2426A-6614-4325-9014-873CE2FCAEEE</key>
 		<dict>
 			<key>xpos</key>
 			<real>1030</real>
 			<key>ypos</key>
-			<real>605</real>
+			<real>705</real>
 		</dict>
 		<key>2601B1DD-8EAB-4B3C-AEE2-5BFFE45ED5E5</key>
 		<dict>
 			<key>xpos</key>
 			<real>910</real>
 			<key>ypos</key>
-			<real>835</real>
+			<real>935</real>
 		</dict>
 		<key>2C3159FB-317C-4678-993E-1BBB9141095B</key>
 		<dict>
 			<key>note</key>
 			<string>float</string>
 			<key>xpos</key>
-			<real>465</real>
+			<real>435</real>
 			<key>ypos</key>
-			<real>855</real>
+			<real>940</real>
 		</dict>
 		<key>330B881A-5B6F-4415-B32E-4F62B9A7864E</key>
 		<dict>
 			<key>xpos</key>
 			<real>690</real>
 			<key>ypos</key>
-			<real>480</real>
+			<real>580</real>
 		</dict>
 		<key>33CD6F02-65A3-4497-9C85-E38FDE97FC8D</key>
 		<dict>
@@ -1453,21 +1549,21 @@ https://www.alfredforum.com/topic/14400-clipsaver-save-images-from-clipboard-his
 			<key>xpos</key>
 			<real>575</real>
 			<key>ypos</key>
-			<real>170</real>
+			<real>270</real>
 		</dict>
 		<key>395E6EB2-E24E-42B0-891C-2AE7E16160F2</key>
 		<dict>
 			<key>xpos</key>
 			<real>210</real>
 			<key>ypos</key>
-			<real>475</real>
+			<real>580</real>
 		</dict>
 		<key>40ABDE7E-4F25-4424-94E4-9489906D568D</key>
 		<dict>
 			<key>xpos</key>
 			<real>1175</real>
 			<key>ypos</key>
-			<real>185</real>
+			<real>285</real>
 		</dict>
 		<key>4E6033E8-BC67-4836-B299-F64154D52F1A</key>
 		<dict>
@@ -1476,7 +1572,7 @@ https://www.alfredforum.com/topic/14400-clipsaver-save-images-from-clipboard-his
 			<key>xpos</key>
 			<real>1215</real>
 			<key>ypos</key>
-			<real>725</real>
+			<real>825</real>
 		</dict>
 		<key>4F366E5F-E737-440C-B9A3-FC859781F3DE</key>
 		<dict>
@@ -1485,28 +1581,28 @@ https://www.alfredforum.com/topic/14400-clipsaver-save-images-from-clipboard-his
 			<key>xpos</key>
 			<real>1315</real>
 			<key>ypos</key>
-			<real>185</real>
+			<real>285</real>
 		</dict>
 		<key>510F5A09-C26E-49C1-8C80-4AE3C0411E36</key>
 		<dict>
 			<key>xpos</key>
-			<real>705</real>
+			<real>700</real>
 			<key>ypos</key>
-			<real>815</real>
+			<real>900</real>
 		</dict>
 		<key>519C25B7-FDE4-4EA5-AF9B-7460EEDC70CE</key>
 		<dict>
 			<key>xpos</key>
 			<real>740</real>
 			<key>ypos</key>
-			<real>190</real>
+			<real>290</real>
 		</dict>
 		<key>5CC78342-FA2A-459C-A878-E2DC3621154B</key>
 		<dict>
 			<key>xpos</key>
 			<real>450</real>
 			<key>ypos</key>
-			<real>475</real>
+			<real>580</real>
 		</dict>
 		<key>5E9A0126-8C80-41E7-AD49-590FE0777A91</key>
 		<dict>
@@ -1515,7 +1611,14 @@ https://www.alfredforum.com/topic/14400-clipsaver-save-images-from-clipboard-his
 			<key>xpos</key>
 			<real>575</real>
 			<key>ypos</key>
-			<real>30</real>
+			<real>145</real>
+		</dict>
+		<key>68014C82-BAD9-4CFC-A6C1-A10A58F10E79</key>
+		<dict>
+			<key>xpos</key>
+			<real>1145</real>
+			<key>ypos</key>
+			<real>905</real>
 		</dict>
 		<key>6C55B9DC-6A05-4228-AD55-2311DD125885</key>
 		<dict>
@@ -1524,21 +1627,21 @@ https://www.alfredforum.com/topic/14400-clipsaver-save-images-from-clipboard-his
 			<key>xpos</key>
 			<real>940</real>
 			<key>ypos</key>
-			<real>30</real>
+			<real>130</real>
 		</dict>
 		<key>70A3AE8F-5B75-4470-89FC-73298C06596C</key>
 		<dict>
 			<key>xpos</key>
 			<real>795</real>
 			<key>ypos</key>
-			<real>790</real>
+			<real>890</real>
 		</dict>
 		<key>71A0EF86-42D5-4C0A-8656-CB6FEAD6F857</key>
 		<dict>
 			<key>xpos</key>
-			<real>35</real>
+			<real>30</real>
 			<key>ypos</key>
-			<real>200</real>
+			<real>235</real>
 		</dict>
 		<key>7D984E52-7568-4C03-B70F-92EFA7067021</key>
 		<dict>
@@ -1547,56 +1650,65 @@ https://www.alfredforum.com/topic/14400-clipsaver-save-images-from-clipboard-his
 			<key>xpos</key>
 			<real>370</real>
 			<key>ypos</key>
-			<real>505</real>
+			<real>610</real>
 		</dict>
 		<key>9D05394A-A5F5-4A2B-8AA7-3C06528411D3</key>
 		<dict>
 			<key>xpos</key>
-			<real>1025</real>
+			<real>1000</real>
 			<key>ypos</key>
-			<real>835</real>
+			<real>935</real>
+		</dict>
+		<key>A02D5916-1E4A-4207-80F9-AE36DF096158</key>
+		<dict>
+			<key>note</key>
+			<string>save_multi</string>
+			<key>xpos</key>
+			<real>575</real>
+			<key>ypos</key>
+			<real>20</real>
 		</dict>
 		<key>A0D95AE6-FB7D-4C9D-BD5E-835FA2DC88F0</key>
 		<dict>
 			<key>xpos</key>
 			<real>910</real>
 			<key>ypos</key>
-			<real>785</real>
+			<real>885</real>
 		</dict>
 		<key>A3FBF3CE-3218-4FC1-A8AC-9D056C1C948B</key>
 		<dict>
 			<key>xpos</key>
 			<real>1030</real>
 			<key>ypos</key>
-			<real>490</real>
+			<real>590</real>
 		</dict>
 		<key>A8AB7CFC-4F7B-436E-8EAD-C48244230F84</key>
 		<dict>
 			<key>xpos</key>
 			<real>740</real>
 			<key>ypos</key>
-			<real>35</real>
+			<real>150</real>
 		</dict>
 		<key>AB178842-6707-4C5B-88D1-FC317394D8F9</key>
 		<dict>
 			<key>xpos</key>
 			<real>940</real>
 			<key>ypos</key>
-			<real>370</real>
+			<real>470</real>
 		</dict>
 		<key>C8999852-47D6-4E54-ACBA-03F7186AF696</key>
 		<dict>
 			<key>xpos</key>
 			<real>980</real>
 			<key>ypos</key>
-			<real>300</real>
+			<real>400</real>
 		</dict>
 		<key>CCD4FC35-EA9E-47A0-97D7-123CE12B9F47</key>
 		<dict>
 			<key>xpos</key>
 			<real>1025</real>
 			<key>ypos</key>
-			<real>785</real>
+			<real>885</real>
 		</dict>
 		<key>E30762D4-CD07-433B-8B2D-AD06552A2225</key>
 		<dict>
@@ -1605,7 +1717,7 @@ https://www.alfredforum.com/topic/14400-clipsaver-save-images-from-clipboard-his
 			<key>xpos</key>
 			<real>735</real>
 			<key>ypos</key>
-			<real>625</real>
+			<real>725</real>
 		</dict>
 		<key>E3B4F7E0-C8D4-4C51-A42A-25FF8B353E84</key>
 		<dict>
@@ -1614,7 +1726,7 @@ https://www.alfredforum.com/topic/14400-clipsaver-save-images-from-clipboard-his
 			<key>xpos</key>
 			<real>940</real>
 			<key>ypos</key>
-			<real>155</real>
+			<real>255</real>
 		</dict>
 		<key>EE17BA6D-5748-4F20-BE74-602EB8B9849F</key>
 		<dict>
@@ -1623,7 +1735,7 @@ https://www.alfredforum.com/topic/14400-clipsaver-save-images-from-clipboard-his
 			<key>xpos</key>
 			<real>735</real>
 			<key>ypos</key>
-			<real>400</real>
+			<real>500</real>
 		</dict>
 		<key>F34B0F25-D875-426D-8071-3FACA31F0AE1</key>
 		<dict>
@@ -1632,30 +1744,30 @@ https://www.alfredforum.com/topic/14400-clipsaver-save-images-from-clipboard-his
 			<key>xpos</key>
 			<real>1135</real>
 			<key>ypos</key>
-			<real>270</real>
+			<real>370</real>
 		</dict>
 		<key>F47F1B80-82C9-49BA-9CF2-DBD52631E160</key>
 		<dict>
 			<key>xpos</key>
 			<real>795</real>
 			<key>ypos</key>
-			<real>860</real>
+			<real>960</real>
 		</dict>
 		<key>F8D8F9B0-A655-474F-9D3C-68866A8D85E6</key>
 		<dict>
 			<key>xpos</key>
 			<real>195</real>
 			<key>ypos</key>
-			<real>175</real>
+			<real>195</real>
 		</dict>
 		<key>FF2B9F42-D9A9-42D6-ABDB-8691AC88D747</key>
 		<dict>
 			<key>note</key>
 			<string>save selection and file buffer into vars</string>
 			<key>xpos</key>
-			<real>560</real>
+			<real>540</real>
 			<key>ypos</key>
-			<real>785</real>
+			<real>870</real>
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>
@@ -1881,7 +1993,7 @@ https://www.alfredforum.com/topic/14400-clipsaver-save-images-from-clipboard-his
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>2.5.1</string>
+	<string>2.7.0</string>
 	<key>webaddress</key>
 	<string>https://github.com/luckman212/alfred_clipsaver_workflow</string>
 </dict>
