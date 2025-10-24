@@ -10,11 +10,24 @@ def envvar(v: str, dv: str) -> str:
 
 #for checkboxes - unchecked aka `0` returns `false`
 def envvar_to_bool(v: str) -> str:
-  try:
-    b = int(os.getenv(v))
-  except:
+  raw_val = os.getenv(v)
+  
+  # Handle both '1'/'0' and 'true'/'false' strings
+  if raw_val is None:
     b = 0
-  return str(bool(b)).lower()
+  elif raw_val.lower() in ('true', '1', 'yes'):
+    b = 1
+  elif raw_val.lower() in ('false', '0', 'no', ''):
+    b = 0
+  else:
+    # Try to parse as integer
+    try:
+      b = int(raw_val)
+    except:
+      b = 0
+  
+  result = str(bool(b)).lower()
+  return result
 
 def envvar_to_int(v: str, dv: int=0) -> int:
   try:
