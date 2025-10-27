@@ -232,7 +232,7 @@
 				<key>modifiers</key>
 				<integer>524288</integer>
 				<key>modifiersubtext</key>
-				<string>Press ↵ to edit (annotate) selected images using CleanShot</string>
+				<string>Press ↩ to edit (annotate) selected images using CleanShot</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -242,7 +242,7 @@
 				<key>modifiers</key>
 				<integer>131072</integer>
 				<key>modifiersubtext</key>
-				<string>Press ↵ to float (pin) selected images using CleanShot</string>
+				<string>Press ↩ to float (pin) selected images using CleanShot</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -1871,7 +1871,7 @@ https://www.alfredforum.com/topic/14400-clipsaver-save-images-from-clipboard-his
 				<key>required</key>
 				<false/>
 				<key>text</key>
-				<string>Save images to current Finder window</string>
+				<string>Save images to frontmost Finder window</string>
 			</dict>
 			<key>description</key>
 			<string></string>
@@ -1993,7 +1993,7 @@ https://www.alfredforum.com/topic/14400-clipsaver-save-images-from-clipboard-his
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>2.7.0</string>
+	<string>2.7.1</string>
 	<key>webaddress</key>
 	<string>https://github.com/luckman212/alfred_clipsaver_workflow</string>
 </dict>

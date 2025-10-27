@@ -31,7 +31,7 @@ if [[ $atleast -eq 0 ]] ; then
   break_err 2 "atleast must be >0"
 fi
 
-if [[ $save_to_current == "true" ]]; then
+if [[ $save_to_current == true ]]; then
   if fwin=$(osascript -e 'tell application "Finder" to get POSIX path of (insertion location as alias)' 2>/dev/null); then
     dest_dir=$fwin
   fi

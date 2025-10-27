@@ -41,7 +41,7 @@ if [[ $max_clips -lt "$num_clips" ]]; then
   num_clips=$max_clips
 fi
 
-if [[ $save_to_current == "true" ]]; then
+if [[ $save_to_current == true ]]; then
   if fwin=$(osascript -e 'tell application "Finder" to get POSIX path of (insertion location as alias)' 2>/dev/null); then
     dest_dir=$fwin
   fi

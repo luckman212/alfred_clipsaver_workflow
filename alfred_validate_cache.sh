@@ -3,7 +3,7 @@
 # cleans up orphan image files that no longer exist in Alfred's db
 
 if [[ -z $db_path ]]; then
-  db_path='Library/Application Support/Alfred/Databases/'
+  db_path='Library/Application Support/Alfred/Databases'
 fi
 
 if [[ -z $db_name ]]; then

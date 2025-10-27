@@ -28,7 +28,7 @@ if [[ ${dest_dir:0:1} != '/' ]]; then
   dest_dir=$(tr '[:upper:]' '[:lower:]' <<<"$HOME/$dest_dir")
 fi
 
-if [[ ${save_to_current} == true ]]; then
+if [[ $save_to_current == true ]]; then
   if fwin=$(osascript -e 'tell application "Finder" to get POSIX path of (insertion location as alias)' 2>/dev/null); then
     dest_dir=$fwin
   fi

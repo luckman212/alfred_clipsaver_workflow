@@ -9,10 +9,11 @@ def envvar(v: str, dv: str) -> str:
   return str(os.getenv(v) or dv)
 
 #for checkboxes - unchecked aka `0` returns `false`
-def envvar_to_bool(v: str) -> str:
-  try:
-    b = int(os.getenv(v))
-  except:
+def envvar_to_bool(v: str='') -> str:
+  raw_val = os.getenv(v,'')
+  if raw_val.lower() in ('true', '1', 'yes'):
+    b = 1
+  else:
     b = 0
   return str(bool(b)).lower()
 

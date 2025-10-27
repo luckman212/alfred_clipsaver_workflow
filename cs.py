@@ -11,6 +11,8 @@ from contextlib import contextmanager
 from wf_common import *
 #from pathlib import Path
 
+b_stc = True if save_to_current == "true" else False
+
 @contextmanager
 def database(path):
   db = sqlite3.connect(path)
@@ -27,7 +29,7 @@ def append_item(fn, img, title, sub, srcapp, ctime):
       "uid": ''.join([ uidSeed, '.', fn ]),
       "variables": { "uidSeed": uidSeed },
       "title": title,
-      "subtitle": f'{ctime} ↩ save as {fmt.upper()}',
+      "subtitle": f'{ctime} ↩ save as {fmt.upper()}{" to frontmost folder" if b_stc else ""}',
       "arg": il,
       "type": "file:skipcheck",
       "variables": {
@@ -59,30 +61,30 @@ def listitems(fmt='png', num=1, since=None, human=None):
   if since and human:
     atleast = int(dt.datetime.now().timestamp()) - since - 978307200
     items.append({
-      "title": f'↩ save time-filtered clips below (last {human}) as {fmt.upper()}',
+      "title": f'↩ save time-filtered clips below (last {human}) as {fmt.upper()}{" to frontmost folder" if b_stc else ""}',
       "arg": atleast,
       "icon": { "path": "clock.png" },
       "variables": {
         "action": 'multisave_time',
         "format": fmt.lower()
       },
-      "quicklookurl": ''
+      "quicklookurl": None
     })
   else:
     atleast = 0
   if num > 1:
     items.append({
-      "title": f'↩ save last {num} clips as {fmt.upper()}',
+      "title": f'↩ save last {num} clips as {fmt.upper()}{" to frontmost folder" if b_stc else ""}',
       "arg": num,
       "variables": {
         "action": 'multisave',
         "format": fmt.lower()
       },
-      "quicklookurl": ''
+      "quicklookurl": None
     })
   with database(db_res) as db:
     #0=filename, 1=title, 2=src app, 3=time, 4=type (1=image from db,2=files)
-    rows = db.execute("SELECT dataHash,item,apppath,ts,dataType from clipboard WHERE dataType IN (1,2) AND ts >= ? ORDER BY rowid DESC LIMIT ?", [atleast, sf_clip_limit])
+    rows = db.execute("SELECT dataHash,item,apppath,ts,dataType from clipboard WHERE dataHash IS NOT NULL AND dataType IN (1,2) AND ts >= ? ORDER BY rowid DESC LIMIT ?", [atleast, sf_clip_limit])
     for r in rows:
       (fn, title, srcapp, ts, dtype) = r
       ts += 978307200
