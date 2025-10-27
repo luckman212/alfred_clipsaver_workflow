@@ -39,7 +39,8 @@ All configuration is optional. The workflow should work "out of the box" without
 - Pass an image format e.g. `jpeg` as an argument to override your default format
 
 ## Screenshot:
-<img width=500 src=https://raw.githubusercontent.com/luckman212/alfred_clipsaver_workflow/main/clipsaver.png>
+
+![](./clipsaver.png)
 
 ## Download:
 https://github.com/luckman212/alfred_clipsaver_workflow/releases/latest/
